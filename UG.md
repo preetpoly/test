@@ -617,7 +617,7 @@ parameters listed in this [table](#Table_list_recon).
 "mac_address": "8c:16:45:a3:9f:61"
 
 },
-
+```json
 "node_info": {
 
 "computer_name": "janedoe-laptop",
@@ -633,6 +633,7 @@ parameters listed in this [table](#Table_list_recon).
 "physical_memory": "17026711552"
 
 },
+```json
 
 "node_key": "5c4a23e6-bfee-4445-ac98-5d2484d64fcb",
 
