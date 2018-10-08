@@ -1078,7 +1078,7 @@ Filters operate on the [tables](#polylogyx-tables) and are defined in the
 osquery configuration file. Use the JSON syntax to define filters. Place all
 filters within the plgx_event_filters tag in the osquery configuration file.
 Here is the syntax used to define a filter.
-
+```json
 “plgx_event_filters”: {
 
 “table name1”: {
@@ -1154,7 +1154,7 @@ Here is the syntax used to define a filter.
 }
 
 }
-
+```
 In the syntax:
 
 -   table name1 and table name2 - Represents the name of the table for which to
