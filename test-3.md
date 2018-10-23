@@ -163,7 +163,7 @@ Response: A JSON Array of nodes and their properties.
 
 Example Response
 
-\`\`\`
+```
 
 {
 
@@ -221,7 +221,7 @@ Example Response
 
 }
 
-\`\`\`
+```
 
 ###   Get Node by host_identifier
 
