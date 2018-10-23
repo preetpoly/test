@@ -168,9 +168,10 @@ Lists all endpoint nodes managed by the PolyLogyx server and their properties.
 ### Get Node Configuration
 
 Get the config for a node.
-
+```json
 | URL: https://\<Base URL\>/nodes/config/\<host_identifier\> Request Type: GET Response: Current config applied on node. Example Response { "status": "success", "message": "Successfully fetched the node config", "data": { "packs": {}, "win_include_paths": { "user_folders": [ "C:\\\\Users\\\\\*\\\\Downloads\\\\" ] }, "options": { "custom_plgx_LogModeQuiet": "0", "custom_plgx_enable_respserver": "true", "schedule_splay_percent": 10, "custom_plgx_ServerHttpPort": "8280", "custom_plgx_ServerHttpsPort": "443", "logger_tls_compress": true, "custom_plgx_LogFileName": "\\\\ProgramData\\\\osquery\\\\plgx_win_extn\\\\log\\\\plgx-agent.log", "custom_plgx_LogLevel": "1", "custom_plgx_EnableLogging": "true", "disable_watchdog": true, "host_identifier": "uuid", "custom_plgx_ServerPort": "443" }, "win_exclude_paths": { "temp_folders": [ "C:\\\\Users\\\\\*\\\\Downloads\\\\exclude\\\\" ] }, "schedule": { "win_file_events": { "query": "select \* from win_file_events;", "interval": 10, "description": "win file events" } } } } |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+json
 
 
 ### Get All Configs
