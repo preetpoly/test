@@ -1,5 +1,3 @@
-![product architecture](test/Presentation2.png)
-
 Getting Started
 ===============
 
