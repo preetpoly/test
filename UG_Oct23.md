@@ -163,25 +163,17 @@ server.
 
 1.  Unzip the plgx_docker.zip file on the local server.
 
->   (Md5: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+    ```(Md5: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+    ~/Downloads$ ls
+    plgx_docker.zip
+    ~/Downloads$ unzip plgx_docker.zip 
+    Archive:  plgx_docker.zip
+    inflating: plgx_docker/server.crt 
+    <snip>
+    inflating: plgx_docker/Doorman/doorman/plugins/alerters/debug.pyc  
+    ~/Downloads$ ls
+    plgx_docker  plgx_docker.zip```
 
->   \~/Downloads\$ ls
-
->   plgx_docker.zip
-
->   \~/Downloads\$ unzip plgx_docker.zip
-
->   Archive: plgx_docker.zip
-
->   inflating: plgx_docker/server.crt
-
->   \<snip\>
-
->   inflating: plgx_docker/Doorman/doorman/plugins/alerters/debug.pyc
-
->   \~/Downloads\$ ls
-
->   plgx_docker plgx_docker.zip
 
 1.  Switch to the folder where the installer is placed.
 
