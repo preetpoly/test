@@ -156,7 +156,6 @@ server.
 
 1.  Clean-up existing Docker images and containers using the docker-cleanup.sh
     file.
-
     ```~/Downloads\$ sh ./docker-cleanup.sh```
 
 **Note:** This will clean **all** the images and containers.
@@ -189,9 +188,9 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
 1.  Modify and save the docker-compose.yaml file.
 
     1.  Edit the following configuration parameters in the file.
-        ```ENROLL_SECRET=<secret value>
-           DOORMAN_USER=<user login name>
-           DOORMAN_PASSWORD=<login password>```
+     ```ENROLL_SECRET=<secret value>
+        DOORMAN_USER=<user login name>
+        DOORMAN_PASSWORD=<login password>```
         In the syntax, replace the values in angle brackets with required values.
 1.  Ensure all the ports specified in the YAML file are open and accessible
 2.  Save the file.
@@ -199,12 +198,11 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
     ```docker-compose up```
     Typically, this takes approximately 10-15 minutes. The following lines appear on
     the screen when Docker starts:
-````~/Downloads/plgx_docker$ docker-compose up
-Starting plgx_docker_rabbit1_1  ... done
-Starting plgx_docker_postgres_1 ... done
-Starting plgx_docker_vasp_1     ... done
-Attaching to plgx_docker_rabbit1_1, plgx_docker_postgres_1, plgx_docker_vasp_1
-```
+    ````~/Downloads/plgx_docker$ docker-compose up
+    Starting plgx_docker_rabbit1_1  ... done
+    Starting plgx_docker_postgres_1 ... done
+    Starting plgx_docker_vasp_1     ... done
+    Attaching to plgx_docker_rabbit1_1, plgx_docker_postgres_1, plgx_docker_vasp_1```
 1.  Log on to server using following URL using the latest version of Chrome or
     Firefox browser.
     ```https://<ip address>:9000/manage```
