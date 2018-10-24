@@ -91,7 +91,7 @@ Architecture
 The following diagram depicts the product architecture and its ecosystem
 components.
 
-![](test/Presentation2.png)
+![](test/Presentation2.png?raw=true)
 
  Provisioning the PolyLogyx Server 
 ===================================
