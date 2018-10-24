@@ -190,9 +190,10 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
 1.  Modify and save the docker-compose.yaml file.
 
     1.  Edit the following configuration parameters in the file. In the syntax, replace the values in angle brackets with required values.
-      ```ENROLL_SECRET=<secret value>
-      DOORMAN_USER=<user login name>
-      DOORMAN_PASSWORD=<login password>```
+    ```ENROLL_SECRET=<secret value>
+        DOORMAN_USER=<user login name>
+        DOORMAN_PASSWORD=<login password>```
+
              
 1.  Ensure all the ports specified in the YAML file are open and accessible
 2.  Save the file.
