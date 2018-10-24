@@ -190,9 +190,10 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
 1.  Modify and save the docker-compose.yaml file.
 
     1.  Edit the following configuration parameters in the file. In the syntax, replace the values in angle brackets with required values.
-    ```ENROLL_SECRET=<secret value>
-        DOORMAN_USER=<user login name>
-        DOORMAN_PASSWORD=<login password>```
+``` ENROLL_SECRET=<secret value>
+DOORMAN_USER=<user login name>
+DOORMAN_PASSWORD=<login password>
+```  
              
 1.  Ensure all the ports specified in the YAML file are open and accessible
 2.  Save the file.
@@ -212,7 +213,7 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
     
     ```https://<ip address>:9000/manage```
 
-In the syntax, `\<IP address\>` is the IP address of the system on which the
+In the syntax, `<IP address>` is the IP address of the system on which the
 PolyLogyx server is hosted. This is the IP address you specified in step 4.
 
 1.  Ignore the SSL warning, if any.
