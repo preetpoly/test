@@ -1,4 +1,4 @@
-![](https://github.com/preetpoly/test/edit/master/Presentation2.png)
+![](test/Presentation2.png)
 
 Getting Started
 ===============
@@ -91,7 +91,7 @@ Architecture
 The following diagram depicts the product architecture and its ecosystem
 components.
 
-![](https://github.com/preetpoly/test/edit/master/Presentation2.png)
+![](test/Presentation2.png)
 
  Provisioning the PolyLogyx Server 
 ===================================
