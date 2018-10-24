@@ -1,4 +1,4 @@
-![](test/Presentation2.png)
+![](test/Presentation2.png?raw=true)
 
 Getting Started
 ===============
