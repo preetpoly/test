@@ -177,11 +177,12 @@ server.
     ```\~/Downloads\$ cd plgx_docker/```
 1.  Enter the certificate-generate.sh script to generate certificates for
     osquery.  
-``` ~/Downloads/plgx_docker\$ sh ./certificate-generate.sh \<IP address\>
+```\~/Downloads/plgx_docker\$ sh ./certificate-generate.sh \<IP address\>
       Generating a 2048 bit RSA private key
       ................................................................................+++
       .........................+++
-      writing new private key to 'Doorman/private.key'```
+      writing new private key to 'Doorman/private.key```
+      
 In the syntax, \<IP address\> is the IP address of the system on which on to
 host the PolyLogyx server. This will generate the certificate for osquery (used
 for provisioning clients) and place the certificate in the plgx_docker folder.
