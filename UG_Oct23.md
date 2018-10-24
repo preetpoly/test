@@ -189,12 +189,11 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
 
 1.  Modify and save the docker-compose.yaml file.
 
-    1.  Edit the following configuration parameters in the file.
+    1.  Edit the following configuration parameters in the file. In the syntax, replace the values in angle brackets with required values.
       ```ENROLL_SECRET=<secret value>
       DOORMAN_USER=<user login name>
       DOORMAN_PASSWORD=<login password>```
-      
-      In the syntax, replace the values in angle brackets with required values.
+             
 1.  Ensure all the ports specified in the YAML file are open and accessible
 2.  Save the file.
 3.  Run the following command to start Docker compose.
@@ -208,9 +207,10 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
     Attaching to plgx_docker_rabbit1_1, plgx_docker_postgres_1, plgx_docker_vasp_1```
 1.  Log on to server using following URL using the latest version of Chrome or
     Firefox browser.
+    
     ```https://<ip address>:9000/manage```
 
-In the syntax, \<IP address\> is the IP address of the system on which the
+In the syntax, `\<IP address\>` is the IP address of the system on which the
 PolyLogyx server is hosted. This is the IP address you specified in step 4.
 
 1.  Ignore the SSL warning, if any.
@@ -226,7 +226,7 @@ Uninstalling the Server
 To uninstall the PolyLogyx server, run the following command to clean-up
 existing Docker images and containers.
 
-\~/Downloads\$ sh ./docker-cleanup.sh
+```~/Downloads\$ sh ./docker-cleanup.sh```
 
 **Note:** This will clean **all** the images and containers.
 
