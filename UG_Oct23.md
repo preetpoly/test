@@ -174,10 +174,10 @@ server.
     plgx_docker  plgx_docker.zip```
 1.  Switch to the folder where the installer is placed.
 
-    ```\~/Downloads\$ cd plgx_docker/```
+    ```~/Downloads\$ cd plgx_docker/```
 1.  Enter the certificate-generate.sh script to generate certificates for
     osquery.  
-    ``` ~/Downloads/plgx_docker$ sh ./certificate-generate.sh <IP address> 
+    ```~/Downloads/plgx_docker$ sh ./certificate-generate.sh <IP address> 
     Generating a 2048 bit RSA private key
     ................................................................................+++
     .........................+++
@@ -193,12 +193,13 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
     ```ENROLL_SECRET=<secret value>
         DOORMAN_USER=<user login name>
         DOORMAN_PASSWORD=<login password>```
-
              
 1.  Ensure all the ports specified in the YAML file are open and accessible
 2.  Save the file.
 3.  Run the following command to start Docker compose.
+
     ```docker-compose up```
+    
     Typically, this takes approximately 10-15 minutes. The following lines appear on
     the screen when Docker starts:
     ````~/Downloads/plgx_docker$ docker-compose up
