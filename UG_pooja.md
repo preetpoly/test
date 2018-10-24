@@ -81,7 +81,7 @@ Data](#using-recon-data).
 The following diagram depicts the product architecture and its ecosystem
 components.
 
-![](media/4b81a7e8cef6f14c053e3600813045f1.png)
+(media/4b81a7e8cef6f14c053e3600813045f1.png)
 
  Provisioning the PolyLogyx Server 
 ===================================
