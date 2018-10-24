@@ -438,8 +438,8 @@ Endpoint/Node Information and Management
 
 Lists all endpoint nodes managed by the PolyLogyx server and their properties.
 
->   `| URL: https://\<Base URL\>**/nodes** Request Type: GET Response: A JSON
->   Array of nodes and their properties. Example Response { "data": [ {
+>   \| URL: https://\\\<Base URL\\\>\*\*/nodes\*\* Request Type: GET Response: A
+>   JSON Array of nodes and their properties. Example Response { "data": [ {
 >   "enrolled_on": "2018-07-24 06:22:48", "host_identifier":
 >   "77858CB1-6C24-584F-A28A-E054093C8924", "last_checkin": "2018-08-01
 >   13:42:05", "network_info": { "mac_address": "54:26:96:d7:9a:65" },
@@ -447,7 +447,7 @@ Lists all endpoint nodes managed by the PolyLogyx server and their properties.
 >   "hardware_model": "MacBookPro10,2", "hardware_serial": "C02KV7RJDR53",
 >   "hardware_vendor": "Apple Inc.", "physical_memory": "8589934592" },
 >   "node_key": "10b18bd8-9e5e-455f-bd48-8d7c456b841f", "tags": [ "second",
->   "thirdsssss", "first" ] } ], "message": "Successfully fetched the nodes",
+>   "thirdsssss", "first" ] } ], "message`": "Successfully fetched the nodes",
 >   "status": "success" } |`
 
 ### Get Node by host_identifier
@@ -461,18 +461,19 @@ Lists all endpoint nodes managed by the PolyLogyx server and their properties.
 By means of assigning a config, one or more scheduled queries can be assigned to
 a node.
 
-| URL: https://\<Base URL\>**/ nodes/**config**/assign** Request Type: POST Example Request { "host_identifier": "\<host_identifier\>", "config_id": 10, } Response { "status": "success", "message": "Successfully assigned the config" } |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+>   URL: https://\<Base URL\>**/ nodes/**config**/assign** Request Type: POST
+>   Example Request { "host_identifier": "\<host_identifier\>", "config_id": 10,
+>   } Response { "status": "success", "message": "Successfully assigned the
+>   config" }
 
 ### Remove a Config from a node
 
 By means of assigning a config, one or more scheduled queries can be assigned to
 a node.
 
-URL: https://\<Base URL\>**/ nodes/config/remove** Request Type: POST Example
-Request { "host_identifier": "\<host_identifier\>" } Response { "status":
-"success", "message": "Successfully removed the config" }
+>   URL: https://\<Base URL\>/ nodes/config/remove Request Type: POST Example
+>   Request { "host_identifier": "\<host_identifier\>" } Response { "status":
+>   "success", "message": "Successfully removed the config" }
 
 ### Table Name: chocolatey_packages
 
