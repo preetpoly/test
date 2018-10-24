@@ -177,10 +177,10 @@ server.
     ```~/Downloads\$ cd plgx_docker/```
 1.  Enter the certificate-generate.sh script to generate certificates for
     osquery.  
-    ```~/Downloads/plgx_docker$ sh ./certificate-generate.sh <IP address> 
-    Generating a 2048 bit RSA private key
-    ................................................................................+++
-    .........................+++
+  ```~/Downloads/plgx_docker$ sh ./certificate-generate.sh <IP address> 
+  Generating a 2048 bit RSA private key
+  ................................................................................+++
+  .........................+++
     writing new private key to 'Doorman/private.key'``` 
             
 In the syntax, \<IP address\> is the IP address of the system on which on to
@@ -190,7 +190,8 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
 1.  Modify and save the docker-compose.yaml file.
 
     1.  Edit the following configuration parameters in the file. In the syntax, replace the values in angle brackets with required values.
-``` ENROLL_SECRET=<secret value>
+```
+ENROLL_SECRET=<secret value>
 DOORMAN_USER=<user login name>
 DOORMAN_PASSWORD=<login password>
 ```  
