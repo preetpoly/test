@@ -22,10 +22,7 @@ At a high-level, the PolyLogyx platform provides these features.
 
 | Feature                   | Description                                                                                                                                                                                                                                                                                                                     |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Monitoring and visibility | Allows you view and monitor endpoint-related information. You are always informed of what is occurring at all times on all managed endpoints. It helps you meet your compliance needs and get real-time insight into network activity. In addition to standard osquery events, you can also get information about these events: |
-| Intrusion detection       | To allow detection of malicious activities, PolyLogyx offers:                                                                                                                                                                                                                                                                   |
-| Response                  | To respond to a malicious activity, you can perform one or all of these activities:                                                                                                                                                                                                                                             |
-
+| Monitoring and visibility | Allows you view and monitor endpoint-related information. You are always informed of what is occurring at all times on all managed endpoints. It helps you meet your compliance needs and get real-time insight into network activity. In addition to standard osquery events, you can also get information about these events: 
 -   File actions (create, delete, timestomp, modify, and PE)
 
 -   Registry operations (create and modify)
@@ -47,7 +44,11 @@ At a high-level, the PolyLogyx platform provides these features.
 -   YARA scan results
 
 For more information on the type of information, see [Using Recon
-Data](#using-recon-data).
+Data](#using-recon-data).|
+| Intrusion detection       | To allow detection of malicious activities, PolyLogyx offers:                                                                                                                                                                                                                                                                   |
+| Response                  | To respond to a malicious activity, you can perform one or all of these activities:                                                                                                                                                                                                                                             |
+
+
 
 -   Alerting – You can set up rules to define alerts to stay updated on
     pertinent activities. After you set up a rule for an event, you receive an
