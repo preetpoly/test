@@ -162,7 +162,6 @@ server.
 **Note:** This will clean **all** the images and containers.
 
 1.  Unzip the plgx_docker.zip file on the local server.
-
     ```(Md5: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
     ~/Downloads$ ls
     plgx_docker.zip
@@ -173,8 +172,6 @@ server.
     inflating: plgx_docker/Doorman/doorman/plugins/alerters/debug.pyc  
     ~/Downloads$ ls
     plgx_docker  plgx_docker.zip```
-
-
 1.  Switch to the folder where the installer is placed.
 
 >   \~/Downloads\$ cd plgx_docker/
