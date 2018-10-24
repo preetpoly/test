@@ -1,4 +1,4 @@
-![product architecture](test/Presentation2.png?raw=true)
+![product architecture](test/Presentation2.png)
 
 Getting Started
 ===============
@@ -91,7 +91,7 @@ Architecture
 The following diagram depicts the product architecture and its ecosystem
 components.
 
-![product architecture](test/Presentation2.png?raw=true)
+![product architecture](test/Presentation2.png)
 
  Provisioning the PolyLogyx Server 
 ===================================
