@@ -156,6 +156,7 @@ server.
 
 1.  Clean-up existing Docker images and containers using the docker-cleanup.sh
     file.
+    
     ```~/Downloads\$ sh ./docker-cleanup.sh```
 
 **Note:** This will clean **all** the images and containers.
@@ -175,12 +176,12 @@ server.
 
     ```\~/Downloads\$ cd plgx_docker/```
 1.  Enter the certificate-generate.sh script to generate certificates for
-    osquery.
-    ``` \~/Downloads/plgx_docker\$ sh ./certificate-generate.sh \<IP address\>
-        Generating a 2048 bit RSA private key
-        ................................................................................+++
-        .........................+++
-        writing new private key to 'Doorman/private.key'```
+    osquery.  
+``` ~/Downloads/plgx_docker\$ sh ./certificate-generate.sh \<IP address\>
+      Generating a 2048 bit RSA private key
+      ................................................................................+++
+      .........................+++
+      writing new private key to 'Doorman/private.key'```
 In the syntax, \<IP address\> is the IP address of the system on which on to
 host the PolyLogyx server. This will generate the certificate for osquery (used
 for provisioning clients) and place the certificate in the plgx_docker folder.
@@ -188,9 +189,9 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
 1.  Modify and save the docker-compose.yaml file.
 
     1.  Edit the following configuration parameters in the file.
-     ```ENROLL_SECRET=<secret value>
-        DOORMAN_USER=<user login name>
-        DOORMAN_PASSWORD=<login password>```
+   ```ENROLL_SECRET=<secret value>
+      DOORMAN_USER=<user login name>
+      DOORMAN_PASSWORD=<login password>```
         In the syntax, replace the values in angle brackets with required values.
 1.  Ensure all the ports specified in the YAML file are open and accessible
 2.  Save the file.
