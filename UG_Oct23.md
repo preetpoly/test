@@ -1,4 +1,4 @@
-![](media/e16309b5e01c825d98f9f4c2d0e38bc6.png)
+![](https://github.com/preetpoly/test/edit/master/Presentation2.png)
 
 Getting Started
 ===============
