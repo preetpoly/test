@@ -467,19 +467,20 @@ other options. With the –u option, you must use one of these options:
 
 Here are command examples.
 
-| Command            | Description                                                                                                                                                                                                                                                                                                                                           |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `plgx_cpt.exe -u -d` | The following output is displayed if the command is successful. ``` uninstall_osq, will remove everything osquery , db and all folders
+The following output is displayed if the `plgx_cpt.exe -u -d` command is successful. 
+``` uninstall_osq, will remove everything osquery , db and all folders
 Stopping services. Please wait for a few second. As they say, Patience is a Virtue
 Services stopped successfully !!
 Uninstalling Polylogxy osquery client successful. Removing all the services..
-Removing files..```
- |
-| `plgx_cpt.exe -u -s` | The following output is displayed if the command is successful. ```uninstall_osq_shallow, will only uninstall osquery but keep database untouched
+Removing files..
+```   
+
+The following output is displayed if the `plgx_cpt.exe -u -s` command is successful.
+``` uninstall_osq_shallow, will only uninstall osquery but keep database untouched
 Detected existing installation of osquery..
 Uninstalling osquery successful
-Trying to remove C:\ProgramData\osquery\plgx_win_extension.ext.exe ```
-                                                                                                                                                                                                                                                                                 |
+Trying to remove C:\ProgramData\osquery\plgx_win_extension.ext.exe
+```                                                                                                                                                                                                                                                                              
 
 Upgrading the Client 
 ---------------------
@@ -502,13 +503,10 @@ channel](https://osquery-slack.herokuapp.com/).
 The following error mesaage is diaplayed when you run a command wih incoreect
 server details, sch as IP address or host name.
 
-Downloading Files needed for install. Depending on your network connection, it
-might take some time. Please wait..
-
-Transfer failed for [c:\\plgx-temp\\osquery.flags] , Error Code: 7 (Couldn't
-connect to server)
-
+``` Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
+Transfer failed for [c:\plgx-temp\osquery.flags] , Error Code: 7 (Couldn't connect to server)
 Downloading files from Server failed
+```
 
 **Resolution**: To resolve this issue, execute the command with correct server
 details.
@@ -518,13 +516,11 @@ details.
 The following error message is displayed when you run a command without
 administrative privileges or sufficient arguments.
 
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
-
-\#\# Insufficient Privileges \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
-
-\#\# Need Administrator privileges to run CPT\#
-
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+``` ##########################################
+## Insufficient Privileges ###############
+## Need Administrator privileges to run CPT#
+##########################################
+```
 
 **Resolution**: To resolve this issue, execute the command with administrative
 privileges and sufficient arguments.
@@ -534,11 +530,9 @@ privileges and sufficient arguments.
 If you execute the command to install the PolyLogyx client with an incorrect
 certificate path, the following error is displayed.
 
-Failed to open Server's public key file c:\\Users\\user1\\certificate.crt ,
-Error: 2
-
+``` Failed to open Server's public key file c:\Users\user1\certificate.crt , Error: 2
 Failed to read server's public key from input file [c]
-
+```
 **Resolution**: To resolve this error, execute the command with the correct
 path.
 
@@ -547,12 +541,11 @@ path.
 If you execute the command to install the PolyLogyx client with administrative
 privileges but with an invalid certificate, the following error is displayed.
 
-Downloading Files needed for install. Depending on your network connection, it
-might take some time. Please wait..  
-Transfer failed for [c:\\plgx-temp\\osquery.msi] , Error Code: 60 (Peer
-certificate cannot be authenticated with given CA certificates)  
-Downloading files from Server failed  
-=== Failed to configure  ===
+``` Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
+Transfer failed for [c:\plgx-temp\osquery.msi] , Error Code: 60 (Peer certificate cannot be authenticated with given CA certificates)
+Downloading files from Server failed
+=== Failed to configure  ===
+```
 
 **Resolution**: To resolve this error, execute the command with a valid
 certificate.
@@ -562,8 +555,7 @@ certificate.
 If you try to install the PolyLogyx client when osquery already installed, the
 following error message is displayed.
 
-Osquery is already installed, please uninstall before proceeding. Using
-plgx_cpt.exe -u \<d/s\> option
+``` Osquery is already installed, please uninstall before proceeding. Using plgx_cpt.exe -u <d/s> option```
 
 **Resolution**: Follow these steps to resolve the issue:
 
@@ -615,420 +607,217 @@ Accessing data
 To access or view the fetched data, use the getextendednode info API. Here is
 the syntax to invoke the API.
 
-\<server address:port\>/servces/api/v0/nodes/TBA
+```<server address:port\>/servces/api/v0/nodes/TBA```
 
 Here is sample of the API response. Note that data is reported for each of the
 parameters listed in this [table](#Table_list_recon).
 
+```{
+    "data": {
+        "enrolled_on": "2018-09-11 20:36:01",
+        "host_identifier": "A5B128CC-2A08-11B2-A85C-CFFDFBDACCA7",
+        "last_checkin": "2018-09-18 20:02:06",
+        "network_info": {
+            "mac_address": "8c:16:45:a3:9f:61"
+        },
+        "node_info": {
+            "computer_name": "janedoe-laptop",
+            "cpu_physical_cores": "4",
+            "hardware_model": "20KG0022US",
+            "hardware_serial": "PF19A9DK",
+            "hardware_vendor": "LENOVO",
+            "physical_memory": "17026711552"
+        },
+        "node_key": "5c4a23e6-bfee-4445-ac98-5d2484d64fcb",
+        "system_data": [
+            {
+                "data": [
+                    {
+                        "description": "Create and edit presentations ",
+                        "identifier": "aapocclcgogkmnckokdopfmhonfmgoek",
+                        "path": "C:\\Users\\JaneDoe\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\aaposwadwrtgogkmnthdopfmhonfwemgoe\\0.10_0\\",
+                        "version": "0.10"
+                    }
+
+                       ],
+                "name": "chrome_extensions",
+                "updated_at": "2018-09-18 20:01:35"
+            },
+            {
+                "data": [
+                    {
+                        "name": "DEL_ST_CPL",
+                        "path": "CMD",
+                        "status": "enabled"
+                    }
+
+                ],
+                "name": "startup_items",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "name": "Notepad++ (64-bit x64)",
+                        "version": "7.5.8"
+                    }
+                ],
+                "name": "win_programs",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "hidden": "1",
+                        "last_run_message": "The operation completed successfully.",
+                        "next_run_time": "1537302250",
+                        "path": "\\GoogleUpdateTaskMachineCore"
+                    }
+                ],
+                "name": "scheduled_tasks",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "module_path": "",
+                        "path": "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\sgx_psw.inf_amd64_67efe445e1ece117\\aesm_service.exe",
+                        "sha1": "f447c55f91a941d866ff5cb6227a64d2b0015b1e"
+                    }
+
+                ],
+                "name": "win_services",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "bp_microcode_disabled": "0",
+                        "bp_mitigations": "1",
+                        "bp_system_pol_disabled": "",
+                        "cpu_pred_cmd_supported": "1",
+                        "cpu_spec_ctrl_supported": "1",
+                        "ibrs_support_enabled": "1",
+                        "kva_shadow_enabled": "1",
+                        "kva_shadow_inv_pcid": "1",
+                        "kva_shadow_pcid": "1",
+                        "kva_shadow_user_global": "0",
+                        "stibp_support_enabled": "1"
+                    }
+                ],
+                "name": "kva_speculative_info",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "product_name": "Windows Defender Antivirus",
+                        "product_signatures": "Up-to-date",
+                        "product_state": "On",
+                        "product_type": "Anti-Virus"
+
+                    }
+                ],
+                "name": "win_epp_table",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "arguments": " NOEXECUTE=OPTIN  FVEBOOT=2125824  NOVGA",
+                        "path": "C:\\WINDOWS\\System32\\ntoskrnl.exe",
+                        "version": "10.0.17134.285"
+                    }
+                ],
+                "name": "kernel_info",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "image": "C:\\WINDOWS\\system32\\drivers\\wudfrd.sys",
+                        "provider": "Lenovo",
+                        "sha1": "ccc9bd5f9e4d88ccac5881a62639bfde898502cc",
+                        "signed": "1"
+                    }
+                ],
+                "name": "drivers",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [],
+                "name": "etc_hosts",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [],
+                "name": "appcompat_shims",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "common_name": "Microsoft Root Certificate Authority",
+                        "issuer": "com, microsoft, Microsoft Root Certificate Authority",
+                        "not_valid_after": "1620602893",
+                        "path": "CurrentUser\\Trusted Root Certification Authorities",
+                        "self_signed": "1"
+                    }
+                ],
+                "name": "certificates",
+                "updated_at": "2018-09-18 20:01:35"
+            },
+            {
+                "data": [
+                    {
+                        "timestamp": "Tue Sep 18 19:59:54 2018 UTC",
+                        "unix_time": "1537300794"
+                    }
+                ],
+                "name": "time",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "directory": "c:\\windows\\system32\\WindowsPowerShell\\v1.0",
+                        "path": "c:\\windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                        "sha1": "1b3b40fbc889fd4c645cc12c85d0805ac36ba254"
+   	            }
+                ],
+                "name": "app_hashes",
+                "updated_at": "2018-09-18 20:01:34"
+            },
+            {
+                "data": [
+                    {
+                        "description": "Update",
+                        "hotfix_id": "KB4230204",
+                        "installed_on": "7/14/2018"
+  		     }
+              	      ],
+                "name": "patches",
+                "updated_at": "2018-09-18 20:01:35"
+            },
+            {
+                "data": [
 {
-
-"data": {
-
-"enrolled_on": "2018-09-11 20:36:01",
-
-"host_identifier": "A5B128CC-2A08-11B2-A85C-CFFDFBDACCA7",
-
-"last_checkin": "2018-09-18 20:02:06",
-
-"network_info": {
-
-"mac_address": "8c:16:45:a3:9f:61"
-
-},
-
-"node_info": {
-
-"computer_name": "janedoe-laptop",
-
-"cpu_physical_cores": "4",
-
-"hardware_model": "20KG0022US",
-
-"hardware_serial": "PF19A9DK",
-
-"hardware_vendor": "LENOVO",
-
-"physical_memory": "17026711552"
-
-},
-
-"node_key": "5c4a23e6-bfee-4445-ac98-5d2484d64fcb",
-
-"system_data": [
-
-{
-
-"data": [
-
-{
-
-"description": "Create and edit presentations ",
-
-"identifier": "aapocclcgogkmnckokdopfmhonfmgoek",
-
-"path": "C:[\\\\Users\\\\JaneDoe\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User
-Data\\\\Default\\\\Extensions\\\\aaposwadwrtgogkmnthdopfmhonfwemgoe\\\\0.10_0\\\\](file:///\\Users\\JaneDoe\\AppData\\Local\\Google\\Chrome\\User%20Data\\Default\\Extensions\\aaposwadwrtgogkmnthdopfmhonfwemgoe\\0.10_0\\)",
-
-"version": "0.10"
-
+                        "name": "Microsoft Url Search Hook",
+                        "path": "C:\\Windows\\System32\\ieframe.dll",
+                        "sha1": "fde1cbd1e1009833285a479b6d88d69bcdd7f266",
+                        "version": "11.0.17134.254"
+                    }
+                ],
+                "name": "ie_extensions",
+                "updated_at": "2018-09-18 20:01:35"
+            }
+        ],
+        "tags": []
+    },
+    "message": "Successfully fetched the node info",
+    "status": "success"
 }
-
-],
-
-"name": "chrome_extensions",
-
-"updated_at": "2018-09-18 20:01:35"
-
-},
-
-{
-
-"data": [
-
-{
-
-"name": "DEL_ST_CPL",
-
-"path": "CMD",
-
-"status": "enabled"
-
-}
-
-],
-
-"name": "startup_items",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"name": "Notepad++ (64-bit x64)",
-
-"version": "7.5.8"
-
-}
-
-],
-
-"name": "win_programs",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"hidden": "1",
-
-"last_run_message": "The operation completed successfully.",
-
-"next_run_time": "1537302250",
-
-"path":
-"[\\\\GoogleUpdateTaskMachineCore](file:///\\GoogleUpdateTaskMachineCore)"
-
-}
-
-],
-
-"name": "scheduled_tasks",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"module_path": "",
-
-"path":
-"C:[\\\\WINDOWS\\\\System32\\\\DriverStore\\\\FileRepository\\\\sgx_psw.inf_amd64_67efe445e1ece117\\\\aesm_service.exe](file:///\\WINDOWS\\System32\\DriverStore\\FileRepository\\sgx_psw.inf_amd64_67efe445e1ece117\\aesm_service.exe)",
-
-"sha1": "f447c55f91a941d866ff5cb6227a64d2b0015b1e"
-
-}
-
-],
-
-"name": "win_services",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"bp_microcode_disabled": "0",
-
-"bp_mitigations": "1",
-
-"bp_system_pol_disabled": "",
-
-"cpu_pred_cmd_supported": "1",
-
-"cpu_spec_ctrl_supported": "1",
-
-"ibrs_support_enabled": "1",
-
-"kva_shadow_enabled": "1",
-
-"kva_shadow_inv_pcid": "1",
-
-"kva_shadow_pcid": "1",
-
-"kva_shadow_user_global": "0",
-
-"stibp_support_enabled": "1"
-
-}
-
-],
-
-"name": "kva_speculative_info",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"product_name": "Windows Defender Antivirus",
-
-"product_signatures": "Up-to-date",
-
-"product_state": "On",
-
-"product_type": "Anti-Virus"
-
-}
-
-],
-
-"name": "win_epp_table",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"arguments": " NOEXECUTE=OPTIN FVEBOOT=2125824 NOVGA",
-
-"path":
-"C:[\\\\WINDOWS\\\\System32\\\\ntoskrnl.exe](file:///\\WINDOWS\\System32\\ntoskrnl.exe)",
-
-"version": "10.0.17134.285"
-
-}
-
-],
-
-"name": "kernel_info",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"image":
-"C:[\\\\WINDOWS\\\\system32\\\\drivers\\\\wudfrd.sys](file:///\\WINDOWS\\system32\\drivers\\wudfrd.sys)",
-
-"provider": "Lenovo",
-
-"sha1": "ccc9bd5f9e4d88ccac5881a62639bfde898502cc",
-
-"signed": "1"
-
-}
-
-],
-
-"name": "drivers",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [],
-
-"name": "etc_hosts",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [],
-
-"name": "appcompat_shims",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"common_name": "Microsoft Root Certificate Authority",
-
-"issuer": "com, microsoft, Microsoft Root Certificate Authority",
-
-"not_valid_after": "1620602893",
-
-"path": "CurrentUser\\\\Trusted Root Certification Authorities",
-
-"self_signed": "1"
-
-}
-
-],
-
-"name": "certificates",
-
-"updated_at": "2018-09-18 20:01:35"
-
-},
-
-{
-
-"data": [
-
-{
-
-"timestamp": "Tue Sep 18 19:59:54 2018 UTC",
-
-"unix_time": "1537300794"
-
-}
-
-],
-
-"name": "time",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"directory":
-"c:[\\\\windows\\\\system32\\\\WindowsPowerShell\\\\v1.0](file:///\\windows\\system32\\WindowsPowerShell\\v1.0)",
-
-"path":
-"c:[\\\\windows\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe](file:///\\windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe)",
-
-"sha1": "1b3b40fbc889fd4c645cc12c85d0805ac36ba254"
-
-}
-
-],
-
-"name": "app_hashes",
-
-"updated_at": "2018-09-18 20:01:34"
-
-},
-
-{
-
-"data": [
-
-{
-
-"description": "Update",
-
-"hotfix_id": "KB4230204",
-
-"installed_on": "7/14/2018"
-
-}
-
-],
-
-"name": "patches",
-
-"updated_at": "2018-09-18 20:01:35"
-
-},
-
-{
-
-"data": [
-
-{
-
-"name": "Microsoft Url Search Hook",
-
-"path":
-"C:[\\\\Windows\\\\System32\\\\ieframe.dll](file:///\\Windows\\System32\\ieframe.dll)",
-
-"sha1": "fde1cbd1e1009833285a479b6d88d69bcdd7f266",
-
-"version": "11.0.17134.254"
-
-}
-
-],
-
-"name": "ie_extensions",
-
-"updated_at": "2018-09-18 20:01:35"
-
-}
-
-],
-
-"tags": []
-
-},
-
-"message": "Successfully fetched the node info",
-
-"status": "success"
-
-}
+ ``` 
 
  Understanding Filters
 ======================
@@ -1092,82 +881,47 @@ Filters operate on the [tables](#polylogyx-tables) and are defined in the
 osquery configuration file. Use the JSON syntax to define filters. Place all
 filters within the plgx_event_filters tag in the osquery configuration file.
 Here is the syntax used to define a filter.
-
-“plgx_event_filters”: {
-
-“table name1”: {
-
+``` “plgx_event_filters”: {
+ 	“table name1”: {
 “column name1” : {
-
->   “filter type” : {
-
->   “values”:[
-
->   “value 1”,
-
->   “value 2”
-
->   ]
-
->   }
-
-},
-
+“filter type” : {
+“values”:[
+“value 1”,
+“value 2”
+ ]
+ }
+			  },
 “column name2” : {
-
->   “filter type” : {
-
->   “values”:[
-
->   “value 3”,
-
->   “value 4”
-
->   ]
-
-}
-
-}
-
-},
-
+“filter type” : {
+ “values”:[
+“value 3”,
+“value 4”
+   ]
+				        }
+				   }
+			},
 “table name2”: {
-
 “column name3” : {
-
->   “filter type” : {
-
->   “values”:[
-
->   “value 5”,
-
->   “value 6”
-
->   ]
-
->   }
-
-},
-
+“filter type” : {
+“values”:[
+“value 5”,
+“value 6”
+ ]
+ }
+			   },
 “column name2” : {
+“filter type” : {
+ “values”:[
+“value 7”,
+“value 8”
+   ]
+				  	 }
+				   }
 
->   “filter type” : {
-
->   “values”:[
-
->   “value 7”,
-
->   “value 8”
-
->   ]
-
-}
-
-}
-
-}
-
-}
+			}
+			}
+```
+ 
 
 In the syntax:
 
@@ -1198,18 +952,35 @@ In the syntax:
 Examples
 --------
 
-Here are a few examples of filters.
-
-| Filter Type     | Example                                                                                                                                                                                                                                           |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Exclude filters | "win_process_events": { "cmdline": { "exclude" : { "values": [ "C:\\\\Windows\\\\system32\\\\DllHost.exe /Processid\*", "C:\\\\Windows\\\\system32\\\\SearchIndexer.exe /Embedding", "C:\\\\windows\\\\system32\\\\wermgr.exe -queuereporting", ] |
-| Include filters | "win_registry_events": { "target_name": { "include": { "values": [ "\*CurrentVersion\\\\Run\*", "\*Policies\\\\Explorer\\\\Run\*", "\*Group Policy\\\\Scripts\*", "\*Windows\\\\System\\\\Scripts\*", ] } } }                                     |
-
->   }
-
-}
-
-}
+Here are a few examples of exclude filters.
+``` "win_process_events": {	
+	"cmdline": {
+		"exclude" : {
+			"values": 
+				[
+				"C:\\Windows\\system32\\DllHost.exe /Processid*",
+				"C:\\Windows\\system32\\SearchIndexer.exe /Embedding",
+				"C:\\windows\\system32\\wermgr.exe -queuereporting",
+				]
+     }
+    }
+                                         }
+```
+Here are a few examples of inlcude filters.
+``` "win_registry_events": {
+			"target_name": {
+				"include": {
+					"values": 
+					[
+					"*CurrentVersion\\Run*",
+					"*Policies\\Explorer\\Run*",
+					"*Group Policy\\Scripts*",
+					"*Windows\\System\\Scripts*",
+					]
+					   }
+					 }
+			}
+```
 
 Tables that Support Filters
 ---------------------------
