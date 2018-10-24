@@ -177,11 +177,11 @@ server.
     ```~/Downloads\$ cd plgx_docker/```
 1.  Enter the certificate-generate.sh script to generate certificates for
     osquery.  
-  ```~/Downloads/plgx_docker$ sh ./certificate-generate.sh <IP address> 
-  Generating a 2048 bit RSA private key
-  ................................................................................+++
-  .........................+++
-    writing new private key to 'Doorman/private.key'``` 
+    ```~/Downloads/plgx_docker$ sh ./certificate-generate.sh <IP address>
+    Generating a 2048 bit RSA private key
+    ................................................................................+++
+    .........................+++
+    writing new private key to 'Doorman/private.key``` 
             
 In the syntax, \<IP address\> is the IP address of the system on which on to
 host the PolyLogyx server. This will generate the certificate for osquery (used
@@ -340,8 +340,7 @@ PSEXEC or WMIC command line utilities) with administrative privileges.
 
 Here is the syntax to execute the installation command.
 
-plgx_cpt.exe -i \<ip address\> -h \<hostname\> -k \<server's public key file\>
-[-p \<port number\>] [-v \<osquery version\>] [-o \<download directory\>]
+```plgx_cpt.exe -i <ip address> -h <hostname> -k <server's public key file> [-p <port number>] [-v <osquery version>] [-o <download directory>]```
 
 Here is the syntax description.
 
@@ -361,34 +360,25 @@ Here is the syntax description.
 
 Here is an example of a remote command execution using PSEXEC.
 
-psexec \\\\101.101.1.101 -u Administrator cmd /c dir
-C:\\Users\\Administrator\\plgx_cpt.exe -i 11.111.111.11 -k c:\\certificate.crt
+```psexec \\101.101.1.101 -u Administrator cmd /c dir C:\Users\Administrator\plgx_cpt.exe -i 11.111.111.11 -k c:\certificate.crt```
 
 The installation begins and the CPT utility brings the required artefacts on the
 endpoints. After installation is complete, the Osquery 3.2.4 and PolyLogyx
 extensions are deployed and the osqueryd service starts. The following output is
 displayed if the command is successful.
 
-Downloading Files needed for install. Depending on your network connection, it
-might take some time. Please wait..
-
+``` Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
 Files downloaded. Initiaiting install..
-
 Osquery successfully installed.
-
 Configuring client..Please wait..
-
 Service stopped successfully
-
 Osquery stopped
-
 Client configuration..Ready to go in 5 seconds..
-
 Service start pending...
-
 Service started successfully.
-
 === PolyLogyx osquery client installed Successfully ===
+```
+
 
 ### Verifying Client Installation 
 
@@ -413,40 +403,30 @@ Follow these steps to check if the required processes are running.
 2.  Run the following command to check the state of software stack, including
     osquery, PolyLogyx Extension and associated services.
 
-plgx_cpt.exe –c
+```plgx_cpt.exe –c```
 
 The command output lists the current state of the osqueryd, vast, and vastnw
 services.
 
-osqueryd service up and running
+```osqueryd service up and running
 
 ===================================================
-
-\|\| Query Execution Output \|\|
-
+||           Query Execution Output              ||
 ===================================================
-
 name : plgx_win_extension
-
-path : \\\\.\\pipe\\osquery.em.3694
-
+path : \\.\pipe\osquery.em.3694
 sdk_version : 1.0.0
-
 type : extension
-
 uuid : 3694
-
 version : 1.0.0
 
 ===================================================
-
-\|\| Query Execution Finished \|\|
-
+||          Query Execution Finished             ||
 ===================================================
 
 vast service up and running
-
-vastnw service up and running
+vastnw service up and running  
+```
 
 1.  Review the output to verify if the required services are running.
 
@@ -460,7 +440,7 @@ vastnw service up and running
 
 6.  Verify that process status is set to Running.
 
-    ![](media/5bbc10122c54c1c8057268c6fb85f0fa.png)
+    ![process](https://github.com/preetpoly/test/blob/master/process.png)
 
 Uninstalling the Client
 -----------------------
@@ -475,7 +455,7 @@ Follow these steps to uninstall the PolyLogyx client.
 
     Here is the syntax to execute the installation command.
 
-plgx_cpt.exe -u {\<d\> full-uninstall \| \<s\> shallow-uninstall}
+```plgx_cpt.exe -u {\<d\> full-uninstall \| \<s\> shallow-uninstall}```
 
 The -u parameter is used to uninstall the agent and cannot be combined with any
 other options. With the –u option, you must use one of these options:
@@ -489,11 +469,11 @@ Here are command examples.
 
 | Command            | Description                                                                                                                                                                                                                                                                                                                                           |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| plgx_cpt.exe -u -d | The following output is displayed if the command is successful. uninstall_osq, will remove everything osquery , db and all folders Stopping services. Please wait for a few second. As they say, Patience is a Virtue Services stopped successfully !! Uninstalling Polylogxy osquery client successful. Removing all the services.. Removing files.. |
-| plgx_cpt.exe -u -s | The following output is displayed if the command is successful. uninstall_osq_shallow, will only uninstall osquery but keep database untouched                                                                                                                                                                                                        |
+| `plgx_cpt.exe -u -d` | The following output is displayed if the command is successful. ```uninstall_osq, will remove everything osquery , db and all folders Stopping services. Please wait for a few second. As they say, Patience is a Virtue Services stopped successfully !! Uninstalling Polylogxy osquery client successful. Removing all the services.. Removing files..``` |
+| `plgx_cpt.exe -u -s` | The following output is displayed if the command is successful. ```uninstall_osq_shallow, will only uninstall osquery but keep database untouched                                                                                                                                                                                                        |
 |                    | Detected existing installation of osquery..                                                                                                                                                                                                                                                                                                           |
 |                    | Uninstalling osquery successful                                                                                                                                                                                                                                                                                                                       |
-|                    | Trying to remove C:\\ProgramData\\osquery\\plgx_win_extension.ext.exe                                                                                                                                                                                                                                                                                 |
+|                    | Trying to remove C:\\ProgramData\\osquery\\plgx_win_extension.ext.exe```                                                                                                                                                                                                                                                                                 |
 
 Upgrading the Client 
 ---------------------
