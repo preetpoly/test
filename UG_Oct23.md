@@ -407,9 +407,7 @@ Follow these steps to check if the required processes are running.
 
 The command output lists the current state of the osqueryd, vast, and vastnw
 services.
-
 ```osqueryd service up and running
-
 ===================================================
 ||           Query Execution Output              ||
 ===================================================
@@ -968,7 +966,7 @@ Here are a few examples of exclude filters.
     }
                                          }
 ```
-Here are a few examples of inlcude filters.
+Here are a few examples of include filters.
 ``` "win_registry_events": {
 			"target_name": {
 				"include": {
