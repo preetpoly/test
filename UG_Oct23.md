@@ -157,7 +157,7 @@ server.
 1.  Clean-up existing Docker images and containers using the docker-cleanup.sh
     file.
 
-```\~/Downloads\$ sh ./docker-cleanup.sh```
+    ```~/Downloads\$ sh ./docker-cleanup.sh```
 
 **Note:** This will clean **all** the images and containers.
 
