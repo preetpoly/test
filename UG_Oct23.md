@@ -881,7 +881,8 @@ Filters operate on the [tables](#polylogyx-tables) and are defined in the
 osquery configuration file. Use the JSON syntax to define filters. Place all
 filters within the plgx_event_filters tag in the osquery configuration file.
 Here is the syntax used to define a filter.
-``` “plgx_event_filters”: {
+``` 
+“plgx_event_filters”: {
  	“table name1”: {
 “column name1” : {
 “filter type” : {
@@ -920,6 +921,7 @@ Here is the syntax used to define a filter.
 
 			}
 			}
+
 ```
  
 
@@ -989,27 +991,14 @@ Event filtering is supported on following tables (and fields or columns).
 
 | Table Name                                                  | Supported Columns |
 |-------------------------------------------------------------|-------------------|
-| [win_process_events](#win_process_events-table)             | cmdline           |
+| [win_process_events](#win_process_events-table)             | cmdline, path, and parent_path           |
 | [win_registry_events](#win_registry_events-table)           | target_name       |
-| [win_socket_events](#win_socket_events-table)               | process_name      |
-| [win_file_events](#win_file_events-table)                   | target_path       |
-| [win_remote_thread_events](#win_remote_thread_events-table) | src_path          |
+| [win_socket_events](#win_socket_events-table)               | process_name, remote_port, and remote_address      |
+| [win_file_events](#win_file_events-table)                   | target_path and process_name       |
+| [win_remote_thread_events](#win_remote_thread_events-table) | src_path, target_path, and function_name          |
 | [win_dns_events](#win_dns_events-table)                     | domain_name       |
 | [win_dns_response_events](#win_dns_response_events-table)   | domain_name       |
 
--   path
-
--   parent_path
-
--   remote_port
-
--   remote_address
-
--   process_name
-
--   target_path
-
--   function_name
 
 Tables
 ======
