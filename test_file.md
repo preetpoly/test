@@ -437,10 +437,10 @@ Endpoint/Node Information and Management
 ### Get Endpoint Node Info
 
 Lists all endpoint nodes managed by the PolyLogyx server and their properties.
+```
 
-\`\`\`
 
-| URL: https://\<Base URL\>**/nodes** Request Type: GET Response: A JSON Array of nodes and their properties. Example Response { "data": [ { "enrolled_on": "2018-07-24 06:22:48", "host_identifier": "77858CB1-6C24-584F-A28A-E054093C8924", "last_checkin": "2018-08-01 13:42:05", "network_info": { "mac_address": "54:26:96:d7:9a:65" }, "node_info": { "computer_name": "", "cpu_physical_cores": "2", "hardware_model": "MacBookPro10,2", "hardware_serial": "C02KV7RJDR53", "hardware_vendor": "Apple Inc.", "physical_memory": "8589934592" }, "node_key": "10b18bd8-9e5e-455f-bd48-8d7c456b841f", "tags": [ "second", "thirdsssss", "first" ] } ], "message": "Successfully fetched the nodes", "status": "success" } \`\`\` |
+| URL: https://\<Base URL\>**/nodes** Request Type: GET Response: A JSON Array of nodes and their properties. Example Response { "data": [ { "enrolled_on": "2018-07-24 06:22:48", "host_identifier": "77858CB1-6C24-584F-A28A-E054093C8924", "last_checkin": "2018-08-01 13:42:05", "network_info": { "mac_address": "54:26:96:d7:9a:65" }, "node_info": { "computer_name": "", "cpu_physical_cores": "2", "hardware_model": "MacBookPro10,2", "hardware_serial": "C02KV7RJDR53", "hardware_vendor": "Apple Inc.", "physical_memory": "8589934592" }, "node_key": "10b18bd8-9e5e-455f-bd48-8d7c456b841f", "tags": [ "second", "thirdsssss", "first" ] } ], "message": "Successfully fetched the nodes", "status": "success" } ``` |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
