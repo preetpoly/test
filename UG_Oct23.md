@@ -1,7 +1,5 @@
 ![](media/e16309b5e01c825d98f9f4c2d0e38bc6.png)
 
-*User’s Guide*
-
 Getting Started
 ===============
 
