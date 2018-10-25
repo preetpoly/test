@@ -727,118 +727,311 @@ results", "data": [ { "name": "win_file_events", "timestamp":
 ```
 
 ### View Live Query Results 
-Live query results are streamed over a websocket. You can use any websocket client. Query results will expire, if not retrieved in 10 minutes.`
+Live query results are streamed over a websocket. You can use any websocket client. Query results will expire, if not retrieved in 10 minutes.
 
-```URL: wss://<IP_ADDRESS:PORT>/distributed/result ```
+URL: wss://<IP_ADDRESS:PORT>/distributed/result
 
-### Managing Rules for Alerts<br>List all the Rules
+Managing Rules for Alerts
+-------------------------------------
+
+### List all the Rules
+
 List all rules defined for alerts on the server.
 
 ```
-URL: https:// /rules Request Type: GET
+URL: https://<Base URL> /rules
+Request Type: GET
 
-Response { "data": [ { "alerters": [ "email", "debug" ], "conditions": {
-"condition": "AND", "rules": [ { "field": "column", "id": "column", "input":
-"text", "operator": "column_contains", "type": "string", "value": [
-"domain_name", "89.com" ] } ], "valid": true }, "description": "Adult websites
-test", "id": 1, "name": "Adult websites test", "status": "ACTIVE", "updated_at":
-"Tue, 31 Jul 2018 12:31:43 GMT" } ], "message": "Successfully received the alert
-rules", "status": "success" }
+Response
+{
+	"data": [
+		{
+			"alerters": [
+				"email",
+				"debug"
+			],
+			"conditions": {
+				"condition": "AND",
+				"rules": [
+					{
+						"field": "column",
+						"id": "column",
+						"input": "text",
+						"operator": "column_contains",
+						"type": "string",
+						"value": [
+							"domain_name",
+							"89.com"
+						]
+					}
+				],
+				"valid": true
+			},
+			"description": "Adult websites test",
+			"id": 1,
+			"name": "Adult websites test",
+			"status": "ACTIVE",
+			"updated_at": "Tue, 31 Jul 2018 12:31:43 GMT"
+		}
+	],
+	"message": "Successfully received the alert rules",
+	"status": "success"
+}
+
 ```
 ### List a Specific Rule
 List a specific rule defined on the server based on its ID.
 
 ```
-URL: https:// /rules/ Request Type: GET
+URL: https://<Base URL> /rules/<rule_id>
+Request Type: GET
+ 
 
-Response { "data": { "alerters": [ "email", "debug" ], "conditions": {
-"condition": "AND", "rules": [ { "field": "column", "id": "column", "input":
-"text", "operator": "column_contains", "type": "string", "value": [
-"domain_name", "89.com" ] } ], "valid": true }, "description": "Adult websites
-test", "id": 1, "name": "Adult websites test", "status": "ACTIVE", "updated_at":
-"Tue, 31 Jul 2018 12:31:43 GMT" }, "message": "Successfully fetched the rule",
-"status": "success" }
+Response
+{
+	"data": {
+		"alerters": [
+			"email",
+			"debug"
+		],
+		"conditions": {
+			"condition": "AND",
+			"rules": [
+				{
+					"field": "column",
+					"id": "column",
+					"input": "text",
+					"operator": "column_contains",
+					"type": "string",
+					"value": [
+						"domain_name",
+						"89.com"
+					]
+				}
+			],
+			"valid": true
+		},
+		"description": "Adult websites test",
+		"id": 1,
+		"name": "Adult websites test",
+		"status": "ACTIVE",
+		"updated_at": "Tue, 31 Jul 2018 12:31:43 GMT"
+	},
+	"message": "Successfully fetched the rule",
+	"status": "success"
+}
+
 ```
 ### Add a Rule
 Define a rule to for a new alert.
 
 ```
-URL: https:// /rules/add Request Type: POST
+URL: https://<Base URL> /rules/add
+Request Type: POST
+ 
 
-Example request: { "alerters": [ "email","splunk" ], "name":"Adult website
-test", "description":"Rule for finding adult websites", "conditions": {
-"condition": "AND",
 
-"rules": [ { "id": "column", "type": "string", "field": "column", "input":
-"text", "value": [ "issuer_name", "Polylogyx.com(Test)" ], "operator":
-"column_contains" } ], "valid": true }
+Example request:
+{
+  "alerters": [
+    "email","splunk"
+  ],
+	"name":"Adult website test",
+"description":"Rule for finding adult websites",
+  "conditions": {
+    "condition": "AND",
+  
+  "rules": [
+    {
+      "id": "column",
+      "type": "string",
+      "field": "column",
+      "input": "text",
+      "value": [
+        "issuer_name",
+        "Polylogyx.com(Test)"
+      ],
+      "operator": "column_contains"
+    }
+  ],
+  "valid": true
+}
 
 }
 
 Response
 
-{ "data": 2, "message": "Successfully configured the rule", "status": "success"
+{
+	"data": 2,
+	"message": "Successfully configured the rule",
+	"status": "success"
 }
+
 ```
 
 ### Modify a Rule
 Update an existing rule.
 
 ```
-URL: https:// /rules/ Request Type: POST
+URL: https://<Base URL> /rules/<rule_id>
+Request Type: POST
 
 Example request:
 
-{ "alerters": [ "email", "debug" ], "conditions": { "condition": "AND", "rules":
-[ { "field": "column", "id": "column", "input": "text", "operator":
-"column_contains", "type": "string", "value": [ "domain_names", "89.com" ] } ],
-"valid": true }, "description": "Adult websites test", "name": "Adult websites
-test", "status": "ACTIVE" }
+{
+  "alerters": [
+    "email",
+    "debug"
+  ],
+  "conditions": {
+    "condition": "AND",
+    "rules": [
+      {
+        "field": "column",
+        "id": "column",
+        "input": "text",
+        "operator": "column_contains",
+        "type": "string",
+        "value": [
+          "domain_names",
+          "89.com"
+        ]
+      }
+    ],
+    "valid": true
+  },
+  "description": "Adult websites test",
+  "name": "Adult websites test",
+  "status": "ACTIVE"
+}
 
-Response: { "data": { "alerters": [ "email", "debug" ], "conditions": {
-"condition": "AND", "rules": [ { "field": "column", "id": "column", "input":
-"text", "operator": "column_contains", "type": "string", "value": [
-"domain_names", "89.com" ] } ], "valid": true }, "description": "Adult websites
-test", "id": 1, "name": "Adult websites test", "status": "ACTIVE", "updated_at":
-"Wed, 01 Aug 2018 15:15:10 GMT" }, "message": "Successfully modified the rule",
-"status": "success" }
+Response:
+{
+	"data": {
+		"alerters": [
+			"email",
+			"debug"
+		],
+		"conditions": {
+			"condition": "AND",
+			"rules": [
+				{
+					"field": "column",
+					"id": "column",
+					"input": "text",
+					"operator": "column_contains",
+					"type": "string",
+					"value": [
+						"domain_names",
+						"89.com"
+					]
+				}
+			],
+			"valid": true
+		},
+		"description": "Adult websites test",
+		"id": 1,
+		"name": "Adult websites test",
+		"status": "ACTIVE",
+		"updated_at": "Wed, 01 Aug 2018 15:15:10 GMT"
+	},
+	"message": "Successfully modified the rule",
+	"status": "success"
+}
+
 ```
 
-### List all the Alerts Based on node, query_name, and rule_id
+### List Alerts
+List alerts based on node, query_name, and rule_id.
 
 ```
-URL: https:// /alerts Request Type: POST
-
+URL: https://<Base URL> /alerts
+Request Type: POST
+ 
 Example Request:
 
-{ "host_identifier":"77858CB1-6C24-584F-A28A-E054093C8924",
-"query_name":"processes", "rule_id":3 }
+{
+	"host_identifier":"77858CB1-6C24-584F-A28A-E054093C8924",
+	"query_name":"processes",
+	"rule_id":3
+}
 
-Response { "data": [ { "created_at": "Tue, 31 Jul 2018 14:19:30 GMT", "id": 1,
-"message": { "cmdline": "/sbin/launchd", "cwd": "/", "egid": "0", "euid": "0",
-"gid": "0", "name": "launchd", "nice": "0", "on_disk": "1", "parent": "0",
-"path": "/sbin/launchd", "pgroup": "1", "pid": "1", "resident_size": "6078464",
-"root": "", "sgid": "0", "start_time": "0", "state": "R", "suid": "0",
-"system_time": "105116", "threads": "4", "total_size": "17092608", "uid": "0",
-"user_time": "10908", "wired_size": "0" }, "node_id": 1, "query_name":
-"processes", "rule_id": 3, "sql": null } ], "message": "Successfully received
-the alerts", "status": "success" }
+Response
+{
+  "data": [
+    {
+      "created_at": "Tue, 31 Jul 2018 14:19:30 GMT",
+      "id": 1,
+      "message": {
+        "cmdline": "/sbin/launchd",
+        "cwd": "/",
+        "egid": "0",
+        "euid": "0",
+        "gid": "0",
+        "name": "launchd",
+        "nice": "0",
+        "on_disk": "1",
+        "parent": "0",
+        "path": "/sbin/launchd",
+        "pgroup": "1",
+        "pid": "1",
+        "resident_size": "6078464",
+        "root": "",
+        "sgid": "0",
+        "start_time": "0",
+        "state": "R",
+        "suid": "0",
+        "system_time": "105116",
+        "threads": "4",
+        "total_size": "17092608",
+        "uid": "0",
+        "user_time": "10908",
+        "wired_size": "0"
+      },
+      "node_id": 1,
+      "query_name": "processes",
+      "rule_id": 3,
+      "sql": null
+    }
+  ],
+  "message": "Successfully received the alerts",
+  "status": "success"
+}
+
 ```
 
 ### Configure email sender and recipients for alerts
 
 ```
-URL: https:// /email/configure Request Type: POST
+URL: https://<Base URL> /email/configure
+Request Type: POST
+ 
+Example request:
+{
+  "emalRecipients": [
+    "janedoe@abccomp.com",
+    "charliedoe@xyzcomp.com"
+  ],
+  "email": "johndoe@xyzcomp.com",
+  "smtpAddress": "smtp2.gmail.com",
+  "password": "a",
+  "smtpPort": 445
+}
 
-Example request: { "emalRecipients": [ "mehtamouli1k\@gmail.com",
-"moulik1\@polylogyx.com" ], "email": "mehtamoulik13\@gmail.com", "smtpAddress":
-"smtp2.gmail.com", "password": "a", "smtpPort": 445 }
+Response
+{
+	"data": {
+		"email": "johndoe@xyzcomp.com",
+		"emailRecipients": "janedoe@abccomp.com,charliedoe@xyzcomp.com",
+		"emails": "jimdoe@abccorp.com",
+		"password": "YQ==\n",
+		"smtpAddress": "smtp2.gmail.com",
+		"smtpPort": 445
+	},
+	"message": "Successfully updated the details",
+	"status": "success"
+}
 
-Response { "data": { "email": "mehtamoulik13\@gmail.com", "emailRecipients":
-"mehtamouli1k\@gmail.com,moulik1\@polylogyx.com", "emails":
-"mehtamoulik\@gmail.com,moulik\@polylogyx.com", "password": "YQ==",
-"smtpAddress": "smtp2.gmail.com", "smtpPort": 445 }, "message": "Successfully
-updated the details", "status": "success" }
 ```
 
 Managing Responses
@@ -847,34 +1040,50 @@ Managing Responses
 ### List all the Response Commands
 Use this API to list all defined response commands. 
 ```
-URL: https:// /response Request Type: GET
-
+URL: https://<Base URL> /response
+Request Type: GET
+ 
 Response
 
-{ "data": [ { "action": null, "command": "{"action": "delete", "actuator":
-{"endpoint": "polylogyx_vasp"}, "target": {"file": {"device": {"hostname":
-"win10x64-1703"}, "hashes": {"md5": "F4377762954BC0F8A9641CE303539E4D"}, "name":
-"C:\\\\\\\\Users\\\\\\\\Default\\\\\\\\Downloads\\\\\\\\hi.txt"}}}",
-"command_id": "2c92808564cbab3d0164d135e21d0008", "id": 1, "message":
-"FILE_NOT_FOUND", "status": "failure" } ], "message": "Successfully received the
-response commands", "status": "success" }
+{
+  "data": [
+    {
+      "action": null,
+      "command": "{\"action\": \"delete\", \"actuator\": {\"endpoint\": \"polylogyx_vasp\"}, \"target\": {\"file\": {\"device\": {\"hostname\": \"win10x64-1703\"}, \"hashes\": {\"md5\": \"F4377762954BC0F8A9641CE303539E4D\"}, \"name\": \"C:\\\\\\\\Users\\\\\\\\Default\\\\\\\\Downloads\\\\\\\\hi.txt\"}}}",
+      "command_id": "2c92808564cbab3d0164d135e21d0008",
+      "id": 1,
+      "message": "FILE_NOT_FOUND",
+      "status": "failure"
+    }
+  ],
+  "message": "Successfully received the response commands",
+  "status": "success"
+}
+
 ```
 
 ### List Specific Response Command
 
 Use this API to list a specific response command based on command_id.
 ```
-URL: https:// /response/ Request Type: GET
-
+URL: https://<Base URL> /response/<command_id>
+Request Type: GET
+ 
 Response
 
-{ "data": { "action": null, "command": "{"action": "delete", "actuator":
-{"endpoint": "polylogyx_vasp"}, "target": {"file": {"device": {"hostname":
-"win10x64-1703"}, "hashes": {"md5": "F4377762954BC0F8A9641CE303539E4D"}, "name":
-"C:\\\\\\\\Users\\\\\\\\Default\\\\\\\\Downloads\\\\\\\\hi.txt"}}}",
-"command_id": "2c92808564cbab3d0164d135e21d0008", "id": 1, "message":
-"FILE_NOT_FOUND", "status": "failure" }, "message": "Successfully received the
-command status", "status": "success" }
+{
+	"data": {
+		"action": null,
+		"command": "{\"action\": \"delete\", \"actuator\": {\"endpoint\": \"polylogyx_vasp\"}, \"target\": {\"file\": {\"device\": {\"hostname\": \"win10x64-1703\"}, \"hashes\": {\"md5\": \"F4377762954BC0F8A9641CE303539E4D\"}, \"name\": \"C:\\\\\\\\Users\\\\\\\\Default\\\\\\\\Downloads\\\\\\\\hi.txt\"}}}",
+		"command_id": "2c92808564cbab3d0164d135e21d0008",
+		"id": 1,
+		"message": "FILE_NOT_FOUND",
+		"status": "failure"
+	},
+	"message": "Successfully received the command status",
+	"status": "success"
+}
+
 
 ```
 ### Delete a File
@@ -882,54 +1091,103 @@ command status", "status": "success" }
 Allows the SOC analyst to respond to a potential compromise by requesting the
 PolyLogyx server to delete a specific file on a node.
 ```
-
-URL: https:// /response/add Request Type: POST
-
+URL: https://<Base URL> /response/add
+Request Type: POST
+ 
 Example Request
 
-{ "action": "delete", "actuator": { "endpoint": "polylogyx_vasp" }, "target": {
-"file": { "device": { "hostname": "poly-win10" }, "hashes": {}, "name":
-"C:\\Users\\Default\\Downloads\\malware.txt" } } }
+{
+  "action": "delete",
+  "actuator": {
+    "endpoint": "polylogyx_vasp"
+  },
+  "target": {
+    "file": {
+      "device": {
+        "hostname": "poly-win10"
+      },
+      "hashes": {},
+      "name": "C:\\Users\\Default\\Downloads\\malware.txt"
+    }
+  }
+}
 
-Response: { "command_id": "2c92808564ebc9d20164f67fccdd000b", "message":
-"Successfully send the response command", "status": "success" }
+Response:
+{
+	"command_id": "2c92808564ebc9d20164f67fccdd000b",
+	"message": "Successfully send the response command",
+	"status": "success"
+}
 
 ```
 ### Kill a Process
 
 Allows the SOC analyst to terminate a process (identified by a process ID-pid) on a specific endpoint.
 ```
-URL: https:// /response/add Request Type: POST
-
+URL: https://<Base URL> /response/add
+Request Type: POST
+ 
 Example Request
 
-{ "action": "stop", "target": {
+{
+ "action": "stop",
+"target": {
+ 
+"process": {
+"name": "calc.exe",
+"pid": 123,
+"device": {
+"hostname": "10.0.0.5"
+}
+}
+},
+"actuator": {
+"endpoint": "polylogyx_vasp"
+}
+}
 
-"process": { "name": "calc.exe", "pid": 123, "device": { "hostname": "10.0.0.5"
-} } }, "actuator": { "endpoint": "polylogyx_vasp" } }
 
-Response: { "command_id": "2c92808564ebc9d20164f67fccdd000b", "message":
-"Successfully send the response command", "status": "success" }
-
+Response:
+{
+	"command_id": "2c92808564ebc9d20164f67fccdd000b",
+	"message": "Successfully send the response command",
+	"status": "success"
+}
 ```
 ### Carves
 
 List all the carve session. Host identifier is optional.
 ```
-URL: https:// /carves Request Type: POST
-
+URL: https://<Base URL> /carves
+Request Type: POST
+ 
 Example Request:
 
-{ "host_identifier":"77858CB1-6C24-584F-A28A-E054093C8924"
-
+{
+	"host_identifier":"77858CB1-6C24-584F-A28A-E054093C8924"
+	
 }
+
+
 
 Response
 
-{ "data": [ { "archive": "2N1P2UNDY6cd0877fa-36e4-41ff-926a-ff2a22673dc3.tar",
-"block_count": 1, "carve_guid": "cd0877fa-36e4-41ff-926a-ff2a22673dc3",
-"carve_size": 5632, "created_at": "2018-07-24 07:50:05", "id": 10, "node_id": 1,
-"session_id": "2N1P2UNDY6" } ], "message": "Successfully fetched the carves",
-"status": "success" }
+{
+	"data": [
+		{
+			"archive": "2N1P2UNDY6cd0877fa-36e4-41ff-926a-ff2a22673dc3.tar",
+			"block_count": 1,
+			"carve_guid": "cd0877fa-36e4-41ff-926a-ff2a22673dc3",
+			"carve_size": 5632,
+			"created_at": "2018-07-24 07:50:05",
+			"id": 10,
+			"node_id": 1,
+			"session_id": "2N1P2UNDY6"
+		}
+	],
+	"message": "Successfully fetched the carves",
+	"status": "success"
+}
+
 
 ```
