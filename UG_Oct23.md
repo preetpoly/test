@@ -1370,20 +1370,3 @@ This release of the PolyLogyx Endpoint Platform embeds osquery v3.2.6. PolyLogyx
 will make a concerted effort to ensure that we leverage the latest, stable
 version of osquery. For more information on base osquery tables and schema,
 refer to <https://osquery.io/schema/>*.*
-
- To be added later 
-===================
-
-To do:
-
--   Recon - Default view – analytics
-
-The duration for which the data is stored on the endpoint is configurable. Edit
-the value for the \<xyz\> setting (in seconds) in the osquery.conf file to
-indicate the duration for which to store the data at the endpoint. After the
-specified time duration lapses, the data is moved from the endpoint to the
-server and stored in the server database. The data stored on the server can be
-accessed and queries using the REST APIs.
-
-If deployment fails, examine logs placed at *c*:\\\\*plgx_cpt_log.txt* to
-identify the issues.
