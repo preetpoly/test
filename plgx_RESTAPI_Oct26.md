@@ -1374,7 +1374,7 @@ Response
 
 ```
 
-### List Specific Response Command
+### List a Specific Response Command
 
 Use this API to list a specific response command based on command_id.
 ```
@@ -1468,7 +1468,7 @@ Response:
 ```
 ### Carves
 
-List all the carve session. Host identifier is optional.
+List all the carve sessions. Host identifier is optional.
 ```
 URL: https://<Base URL> /carves
 Request Type: POST
