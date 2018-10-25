@@ -175,118 +175,81 @@ Lists information and properties for a specific managed endpoint based on
 host_identifier.
 
 ``` 
-URL: https:///nodes/
-Request Type: GET Response: A node with its properties.
+URL: https://<Base URL>/nodes/<host_identifier>
+ 
+Request Type: GET
+Response: A node with its properties.  
+ 
 Example Response
-{ "data": { "enrolled_on": "2018-07-24 06:22:48", "host_identifier": "77858CB1-6C24-584F-A28A-E054093C8924", "last_checkin": "2018-08-01 13:42:05", "network_info": { "mac_address": "54:26:96:d7:9a:65" }, "node_info": { "computer_name": "", "cpu_physical_cores": "2", "hardware_model": "MacBookPro10,2", "hardware_serial": "C02KV7RJDR53", "hardware_vendor": "Apple Inc.", "physical_memory": "8589934592" }, "node_key": "10b18bd8-9e5e-455f-bd48-8d7c456b841f", "tags": [ "second", "thirdsssss", "first" ] }, "message": "Successfully fetched the node info", "status": "success" }
+ 
+{
+	"data": {
+		"enrolled_on": "2018-07-24 06:22:48",
+		"host_identifier": "77858CB1-6C24-584F-A28A-E054093C8924",
+		"last_checkin": "2018-08-01 13:42:05",
+		"network_info": {
+			"mac_address": "54:26:96:d7:9a:65"
+		},
+		"node_info": {
+			"computer_name": "",
+			"cpu_physical_cores": "2",
+			"hardware_model": "MacBookPro10,2",
+			"hardware_serial": "C02KV7RJDR53",
+			"hardware_vendor": "Apple Inc.",
+			"physical_memory": "8589934592"
+		},
+		"node_key": "10b18bd8-9e5e-455f-bd48-8d7c456b841f",
+		"tags": [
+			"second",
+			"thirdsssss",
+			"first"
+		]
+	},
+	"message": "Successfully fetched the node info",
+	"status": "success"
+} 
+
 ```
 
 Managing Configs
 -----------------
 
-### Get Schema info for all Tables**
+### Get Schema Info for all Tables 
 
 List all the table schemas supported by the server.
 
 ``` 
-URL: https://\<Base URL\> /schema
-
+URL: https://<Base URL> /schema
 Request Type: GET
-
+ 
 Example Response
 
+ 
 {
-
-"data": {
-
-"account_policy_data": "CREATE TABLE account_policy_data (uid BIGINT,
-creation_time DOUBLE, failed_login_count BIGINT, failed_login_timestamp DOUBLE,
-password_last_set_time DOUBLE)",
-
-"win_dns_events": "CREATE TABLE win_dns_events(event_type TEXT,eid TEXT,
-domain_name TEXT, pid TEXT, remote_address TEXT, remote_port BIGINT, time
-BIGINT, utc_time TEXT)",
-
-"win_dns_response_events": "CREATE TABLE win_dns_response_events( event_type
-TEXT,eid TEXT, domain_name TEXT,resolved_ip TEXT, pid BIGINT, remote_address
-TEXT, remote_port INTEGER , time BIGINT, utc_time TEXT )",
-
-"win_epp_table": "CREATE TABLE win_epp_table(product_type TEXT, product_name
-TEXT,product_state TEXT, product_signatures TEXT)",
-
-"win_file_events": "CREATE TABLE win_file_events(action TEXT, eid
-TEXT,target_path TEXT, md5 TEXT ,hashed BIGINT,uid TEXT, time BIGINT,utc_time
-TEXT, pe_file TEXT , pid BIGINT)",
-
-"win_http_events": "CREATE TABLE win_http_events(event_type TEXT, eid TEXT, pid
-TEXT, url TEXT, remote_address TEXT, remote_port BIGINT, time BIGINT,utc_time
-TEXT)",
-
-"win_image_load_events": "CREATE TABLE win_image_load_events(eid TEXT, pid
-BIGINT,uid TEXT, image_path TEXT, sign_info TEXT, trust_info TEXT, time BIGINT,
-utc_time TEXT, num_of_certs BIGINT, cert_type TEXT, version TEXT, pubkey TEXT,
-pubkey_length TEXT, pubkey_signhash_algo TEXT, issuer_name TEXT, subject_name
-TEXT, serial_number TEXT, signature_algo TEXT, subject_dn TEXT, issuer_dn
-TEXT)",
-
-"win_msr": "CREATE TABLE win_msr(turbo_disabled INTEGER , turbo_ratio_limt
-INTEGER ,platform_info INTEGER, perf_status INTEGER ,perf_ctl
-INTEGER,feature_control INTEGER, rapl_power_limit INTEGER ,rapl_energy_status
-INTEGER, rapl_power_units INTEGER )",
-
-"win_obfuscated_ps": "CREATE TABLE win_obfuscated_ps(script_id TEXT,
-time_created TEXT, obfuscated_state TEXT, obfuscated_score TEXT)",
-
-"win_pefile_events": "CREATE TABLE win_pefile_events(action TEXT, eid
-TEXT,target_path TEXT, md5 TEXT ,hashed BIGINT,uid TEXT, pid BIGINT, time
-BIGINT,utc_time TEXT )",
-
-"win_process_events": "CREATE TABLE win_process_events(action TEXT, eid TEXT,pid
-BIGINT, path TEXT ,cmdline TEXT,parent BIGINT, parent_path TEXT,owner_uid TEXT,
-time BIGINT, utc_time TEXT )",
-
-"win_process_handles": "CREATE TABLE win_process_handles(pid BIGINT, handle_type
-TEXT, object_name TEXT, access_mask BIGINT)",
-
-"win_process_open_events": "CREATE TABLE win_process_open_events(action TEXT,
-eid TEXT,src_pid BIGINT,target_pid BIGINT, src_path TEXT ,target_path
-TEXT,owner_uid TEXT, time BIGINT, utc_time TEXT )",
-
-"win_registry_events": "CREATE TABLE win_registry_events(action TEXT, eid
-TEXT,key_name TEXT, new_key_name TEXT,value_data TEXT, value_type TEXT,
-owner_uid TEXT, time BIGINT, utc_time TEXT)",
-
-"win_remote_thread_events": "CREATE TABLE win_remote_thread_events( eid
-TEXT,src_pid BIGINT,target_pid BIGINT, src_path TEXT ,target_path TEXT,owner_uid
-TEXT, time BIGINT, utc_time TEXT )",
-
-"win_removable_media_events": "CREATE TABLE
-win_removable_media_events(removable_media_event_type TEXT, eid TEXT,uid
-TEXT,time BIGINT, utc_time TEXT,pid BIGINT)",
-
-"win_socket_events": "CREATE TABLE win_socket_events(event_type TEXT, eid TEXT,
-action TEXT, utc_time TEXT,time BIGINT, pid BIGINT, family TEXT, protocol
-INTEGER, local_address TEXT, remote_address TEXT, local_port INTEGER,remote_port
-INTEGER)",
-
-"win_yara_events": "CREATE TABLE win_yara_events(target_path TEXT, category
-TEXT, action TEXT, matches TEXT, count INTEGER, eid TEXT)",
-
-"windows_crashes": "CREATE TABLE windows_crashes (datetime TEXT, module TEXT,
-path TEXT, pid BIGINT, tid BIGINT, version TEXT, process_uptime BIGINT,
-stack_trace TEXT, exception_code TEXT, exception_message TEXT, exception_address
-TEXT, registers TEXT, command_line TEXT, current_directory TEXT, username TEXT,
-machine_name TEXT, major_version INTEGER, minor_version INTEGER, build_number
-INTEGER, type TEXT, crash_path TEXT)"
-
-},
-
-"message": "Successfully fetched the schema",
-
-"status": "success"
-
+  "data": {
+    "account_policy_data": "CREATE TABLE account_policy_data (uid BIGINT, creation_time DOUBLE, failed_login_count BIGINT, failed_login_timestamp DOUBLE, password_last_set_time DOUBLE)",
+    "win_dns_events": "CREATE TABLE win_dns_events(event_type TEXT,eid TEXT, domain_name TEXT, pid TEXT, remote_address TEXT, remote_port BIGINT, time BIGINT, utc_time TEXT)",
+    "win_dns_response_events": "CREATE TABLE win_dns_response_events( event_type TEXT,eid TEXT, domain_name TEXT,resolved_ip TEXT, pid BIGINT, remote_address TEXT, remote_port INTEGER , time BIGINT, utc_time TEXT  )",
+    "win_epp_table": "CREATE TABLE win_epp_table(product_type TEXT, product_name TEXT,product_state TEXT, product_signatures TEXT)",
+    "win_file_events": "CREATE TABLE win_file_events(action TEXT, eid TEXT,target_path TEXT, md5 TEXT ,hashed BIGINT,uid TEXT, time BIGINT,utc_time TEXT, pe_file TEXT , pid BIGINT)",
+    "win_http_events": "CREATE TABLE win_http_events(event_type TEXT, eid TEXT, pid TEXT, url TEXT, remote_address TEXT, remote_port BIGINT, time BIGINT,utc_time TEXT)",
+    "win_image_load_events": "CREATE TABLE win_image_load_events(eid TEXT, pid BIGINT,uid TEXT,  image_path TEXT, sign_info TEXT, trust_info TEXT, time BIGINT, utc_time      TEXT, num_of_certs BIGINT, cert_type         TEXT, version TEXT, pubkey TEXT, pubkey_length TEXT, pubkey_signhash_algo         TEXT, issuer_name TEXT, subject_name TEXT, serial_number TEXT, signature_algo     TEXT, subject_dn TEXT, issuer_dn TEXT)",
+    "win_msr": "CREATE TABLE win_msr(turbo_disabled INTEGER , turbo_ratio_limt INTEGER ,platform_info INTEGER, perf_status INTEGER ,perf_ctl INTEGER,feature_control INTEGER, rapl_power_limit INTEGER ,rapl_energy_status INTEGER, rapl_power_units INTEGER )",
+    "win_obfuscated_ps": "CREATE TABLE win_obfuscated_ps(script_id TEXT, time_created TEXT, obfuscated_state TEXT, obfuscated_score TEXT)",
+    "win_pefile_events": "CREATE TABLE win_pefile_events(action TEXT, eid TEXT,target_path TEXT, md5 TEXT ,hashed BIGINT,uid TEXT, pid BIGINT, time BIGINT,utc_time TEXT )",
+    "win_process_events": "CREATE TABLE win_process_events(action TEXT, eid TEXT,pid BIGINT, path TEXT ,cmdline TEXT,parent BIGINT, parent_path TEXT,owner_uid TEXT, time BIGINT, utc_time TEXT  )",
+    "win_process_handles": "CREATE TABLE win_process_handles(pid BIGINT, handle_type TEXT, object_name TEXT, access_mask BIGINT)",
+    "win_process_open_events": "CREATE TABLE win_process_open_events(action TEXT, eid TEXT,src_pid BIGINT,target_pid BIGINT, src_path TEXT ,target_path TEXT,owner_uid TEXT, time BIGINT, utc_time TEXT  )",
+    "win_registry_events": "CREATE TABLE win_registry_events(action TEXT, eid TEXT,key_name TEXT, new_key_name TEXT,value_data TEXT, value_type TEXT, owner_uid TEXT, time BIGINT, utc_time TEXT)",
+    "win_remote_thread_events": "CREATE TABLE win_remote_thread_events( eid TEXT,src_pid BIGINT,target_pid BIGINT, src_path TEXT ,target_path TEXT,owner_uid TEXT, time BIGINT, utc_time TEXT  )",
+    "win_removable_media_events": "CREATE TABLE win_removable_media_events(removable_media_event_type TEXT, eid TEXT,uid TEXT,time BIGINT, utc_time TEXT,pid BIGINT)",
+    "win_socket_events": "CREATE TABLE win_socket_events(event_type TEXT, eid TEXT, action TEXT, utc_time TEXT,time BIGINT, pid BIGINT, family TEXT, protocol INTEGER, local_address TEXT, remote_address TEXT, local_port INTEGER,remote_port INTEGER)",
+    "win_yara_events": "CREATE TABLE win_yara_events(target_path TEXT, category TEXT, action TEXT, matches TEXT, count INTEGER, eid TEXT)",
+    "windows_crashes": "CREATE TABLE windows_crashes (datetime TEXT, module TEXT, path TEXT, pid BIGINT, tid BIGINT, version TEXT, process_uptime BIGINT, stack_trace TEXT, exception_code TEXT, exception_message TEXT, exception_address TEXT, registers TEXT, command_line TEXT, current_directory TEXT, username TEXT, machine_name TEXT, major_version INTEGER, minor_version INTEGER, build_number INTEGER, type TEXT, crash_path TEXT)"
+  },
+  "message": "Successfully fetched the schema",
+  "status": "success"
 }
-
 ```
 
 ### Get Schema info for Specific Table from Server
@@ -294,23 +257,18 @@ INTEGER, type TEXT, crash_path TEXT)"
 List the table schemas for a specific table from the server.
 
 ```
-URL: https://\<Base URL\> /schema/\<table_name\>
-
+URL: https://<Base URL> /schema/<table_name>
 Request Type: GET
-
+ 
 Example Response
 
+ 
 {
-
-"data": "CREATE TABLE win_file_events(action TEXT, eid TEXT,target_path TEXT,
-md5 TEXT ,hashed BIGINT,uid TEXT, time BIGINT,utc_time TEXT, pe_file TEXT , pid
-BIGINT)",
-
-"message": "Successfully received table schema",
-
-"status": "success"
-
+	"data": "CREATE TABLE win_file_events(action TEXT, eid TEXT,target_path TEXT, md5 TEXT ,hashed BIGINT,uid TEXT, time BIGINT,utc_time TEXT, pe_file TEXT , pid BIGINT)",
+	"message": "Successfully received table schema",
+	"status": "success"
 }
+
 
 ```
 
@@ -319,62 +277,139 @@ BIGINT)",
 Lists all available configs that can be applied to managed nodes.
 
 ```
-"user_folders": [
-"C:\\Temp\\",
-"C:\\Users\\Default\\Downloads\\"
-]                                                                       },
-"win_exclude_paths": {
-"temp_folders": [
-"C:\\Windows\\Temp\\",
-"C:\\Users\\admin\\AppData\\Roaming\\",
-"C:\\Windows\\SoftwareDistribution\\",
-"C:\\Windows\\WinSxS\\"
-]                                                    "prog_files": [
-"C:\\Program Files (x86)\\Windows Kits\\"
-]                                                    "system_folders": [
-"C:\\Windows\\Prefetch\\"
-]                                                },
-schedule": {                                                 "win_file_events":
-"query": "select * from win_file_events;",
-"interval": 10,
-"description": "win file events"
-}                           }                 },                           "id":
-1,                           "name": "poly-config"
-},                                     {                           "updated_at":
-"2018-07-27 12:56:24",                           "created_at": null,
-"config": {                                              "win_include_paths": {
-"user_folders": [                                 "C:\\Users\\*\\Downloads\\"
-]                                               },
-"win_exclude_paths": {
-"temp_folders": [
-"C:\\Users\\*\\Downloads\\exclude\\"
-]                                                },
-"schedule": {
-"win_file_events": {                                 "query": "select * from
-win_file_events;",                                 "interval": 10,
-"description": "win file events"
-}                           }                 },                           "id":
-3,                           "name": "poly-config-new"
-}                ] }`
-
+URL: https://<Base URL>/configs
+ 
+Request Type: GET
+Response: List all the configs available. 
+ 
+Example Response
+ 
+{
+      "status": "success",
+      "message": "Successfully received the configs",
+      "data": [
+               	{
+                          "updated_at": "2018-07-27 12:21:00",
+                          "created_at": null,
+                          "config": {
+                                      "win_include_paths": {
+                                            "user_folders":   [                                                                                                                                                                                                                                  
+                                                 "C:\\Users\\*\\Downloads\\"
+                                                              ]
+                                       },
+                                       "win_exclude_paths": {                                              	                                     "temp_folders":   [
+                                                "C:\\Users\\*\\Downloads\\exclude\\"
+                                                              ]
+                                       },
+                                        "schedule": {                                                                                     	                                     "win_file_events": {                                                                                                                  	                                          "query": "select * from win_file_events;",                                                                                                     	                                          "interval": 10,                                                                                                                	                                          "description": "win file events"
+                                        }
+                             }
+               	},
+                          "id": 2,
+                          "name": "poly-config-new"
+                           	},
+                             	{
+                           "updated_at": "2018-07-27 12:15:46",
+                           "created_at": null,
+                           "config": {
+                                             "win_include_paths": {
+                                                   "system_folders": [                                                                     	                                               "C:\\Windows\\System32\\drivers\\"
+                                                                     ],
+                                                   "system_files": [ 
+                                                      "C:\\Windows\\System32\\drivers\\etc\\hosts"                                                                                                                                       
+                                                                     ]                                                           	                                            "prog_files": [                                                                                            	                                               "C:\\Program Files\\",                                                                                                      	                                               "C:\\Program Files (x86)\\"
+                                                                 	],                                                                              	                                            "user_folders": [                                                                                                  	                                               "C:\\Temp\\",                                                                                                	                                               "C:\\Users\\Default\\Downloads\\"
+                                                                	]  
+                                                                    },
+                                             "win_exclude_paths": {
+                                                   "temp_folders": [                                                                          	 	  	  	  	  	  	    "C:\\Windows\\Temp\\",                                                                        	 	  	  	  	  	  	    "C:\\Users\\admin\\AppData\\Roaming\\",                                                                            	 	  	  	  	  	  	    "C:\\Windows\\SoftwareDistribution\\",
+	 	  	  	  	  	  	    "C:\\Windows\\WinSxS\\"
+                                                                 	]
+                                                   "prog_files": [                                                                                                                                                                                                                                                                                                       
+                                                       "C:\\Program Files (x86)\\Windows Kits\\"
+                                                                	]
+                                                   "system_folders": [
+                                                       "C:\\Windows\\Prefetch\\"
+                                                                 	]
+                                               },
+                                               schedule": {
+                                              	"win_file_events":                                                              	                                                "query": "select * from win_file_events;",
+                                                  	     "interval": 10,                                                                                        	                                                "description": "win file events"
+                                               }
+                          }
+               	},
+                          "id": 1,
+                          "name": "poly-config"
+                                	},
+                                	{
+                          "updated_at": "2018-07-27 12:56:24",
+                          "created_at": null,
+                          "config": {
+                                             "win_include_paths": {
+                                                   "user_folders": [
+	 	  	  	  	  	  	    "C:\\Users\\*\\Downloads\\"
+                                	                               ]
+                                              },
+                                              "win_exclude_paths": {
+                                                   "temp_folders": [
+                                                       "C:\\Users\\*\\Downloads\\exclude\\"
+                                                                   ]
+                                               },
+                                               "schedule": {
+                                                   "win_file_events": {
+	 	  	  	  	  	  	    "query": "select * from win_file_events;",
+	 	  	  	  	  	  	    "interval": 10,
+	 	  	  	  	  	  	    "description": "win file events"
+                                                }
+                          }
+               	},
+                          "id": 3,
+                          "name": "poly-config-new"
+                          }
+               ]
+}
+```
 ### Get Details for Specific Config from Server
 
 Each configuration available at the server is identified by a config ID. Use
 this API to fetch information for a specific config based on its ID.
 
-\`\`\` URL: https:///configs/
-
+```
+URL: https://<Base URL>/configs/<config_id>
+ 
 Request Type: GET
-
+ 
 Example Response
-
-{ "data": { "config": { "schedule": { "processes": { "description": "processes",
-"interval": 10, "query": "select \* from processes;" } }, "win_exclude_paths": {
-"temp_folders": [ "C:\\Users\\\*\\Downloads\\exclude\\" ] },
-"win_include_paths": { "user_folders": [ "C:\\Users\\\*\\Downloads\\" ] } },
-"created_at": null, "id": 3, "name": "poly-config-new", "updated_at":
-"2018-08-01 15:04:10" }, "message": "Successfully fetched the data", "status":
-"success" } 
+ 
+{
+	"data": {
+		"config": {
+			"schedule": {
+				"processes": {
+					"description": "processes",
+					"interval": 10,
+					"query": "select * from processes;"
+				}
+			},
+			"win_exclude_paths": {
+				"temp_folders": [
+					"C:\\Users\\*\\Downloads\\exclude\\"
+				]
+			},
+			"win_include_paths": {
+				"user_folders": [
+					"C:\\Users\\*\\Downloads\\"
+				]
+			}
+		},
+		"created_at": null,
+		"id": 3,
+		"name": "poly-config-new",
+		"updated_at": "2018-08-01 15:04:10"
+	},
+	"message": "Successfully fetched the data",
+	"status": "success"
+} 
 ```
 
 ### Create a new Config on the Server
@@ -383,20 +418,42 @@ Create a config by mixing a combination of packs, queries and other supported
 configurations.
 
 ```
-URL: https:///configs/add
-
+URL: https://<Base URL>/configs/add
+ 
 Request Type: POST
-
+ 
 Example Request
+ 
+{
+  "name": "poly-config-new",
+  "config": {
+	"schedule": {
+  	"win_file_events": {
+    	"query": "select * from win_file_events;",
+    	"interval": 10,
+    	"description": "win file events"
+  	}
+	},
+	"win_include_paths": {
+  	"user_folders": [
+    	"C:\\Users\\*\\Downloads\\"
+  	]
+	},
+	"win_exclude_paths": {
+  	"temp_folders": [
+        "C:\\Users\\*\\Downloads\\exclude\\"
+  	]
+	}
+  }
+}
+ 
+Response
+{
+              	"status": "success",
+              	"message": "Successfully added the config",
+          	"config_id": 10
+}
 
-{ "name": "poly-config-new", "config": { "schedule": { "win_file_events": {
-"query": "select \* from win_file_events;", "interval": 10, "description": "win
-file events" } }, "win_include_paths": { "user_folders": [
-"C:\\Users\\\*\\Downloads\\" ] }, "win_exclude_paths": { "temp_folders": [
-"C:\\Users\\\*\\Downloads\\exclude\\" ] } } }
-
-Response { "status": "success", "message": "Successfully added the config",
-"config_id": 10 } 
 ```
 
 ### Update a Config on the Server 
@@ -404,28 +461,66 @@ Response { "status": "success", "message": "Successfully added the config",
 Use this API to modify information for a specific config based on its ID.
 
 ```
-URL: https:///configs/
-
+URL: https://<Base URL>/configs/<config_id>
+ 
 Request Type: POST
-
+ 
 Example Request
-
-{ "config": { "schedule": { "processes": { "description": "processes",
-"interval": 10, "query": "select \* from processes;" } }, "win_exclude_paths": {
-"temp_folders": [ "C:\\Users\\\*\\Downloads\\exclude\\" ] },
-"win_include_paths": { "user_folders": [ "C:\\Users\\\*\\Downloads\\" ] } },
-"name": "poly-config-new" }
+ 
+{
+  "config": {
+    "schedule": {
+      "processes": {
+        "description": "processes",
+        "interval": 10,
+        "query": "select * from processes;"
+      }
+    },
+    "win_exclude_paths": {
+      "temp_folders": [
+        "C:\\Users\\*\\Downloads\\exclude\\"
+      ]
+    },
+    "win_include_paths": {
+      "user_folders": [
+        "C:\\Users\\*\\Downloads\\"
+      ]
+    }
+  },
+  "name": "poly-config-new"
+}
 
 Response
 
-{ "data": { "config": { "schedule": { "processes": { "description": "processes",
-"interval": 10, "query": "select \* from processes;" } }, "win_exclude_paths": {
-"temp_folders": [ "C:\\Users\\\*\\Downloads\\exclude\\" ] },
-"win_include_paths": { "user_folders": [ "C:\\Users\\\*\\Downloads\\" ] } },
-"created_at": null, "id": 3, "name": "poly-config-new", "updated_at":
-"2018-08-01 15:04:10" }, "message": "Successfully updated the config", "status":
-"success" }
-
+{
+	"data": {
+		"config": {
+			"schedule": {
+				"processes": {
+					"description": "processes",
+					"interval": 10,
+					"query": "select * from processes;"
+				}
+			},
+			"win_exclude_paths": {
+				"temp_folders": [
+					"C:\\Users\\*\\Downloads\\exclude\\"
+				]
+			},
+			"win_include_paths": {
+				"user_folders": [
+					"C:\\Users\\*\\Downloads\\"
+				]
+			}
+		},
+		"created_at": null,
+		"id": 3,
+		"name": "poly-config-new",
+		"updated_at": "2018-08-01 15:04:10"
+	},
+	"message": "Successfully updated the config",
+	"status": "success"
+}
 ```
 
 Managing Node Configuration
@@ -436,25 +531,51 @@ Managing Node Configuration
 Get the config for a node based on host_identifier.
 
 ```
-URL: https:///nodes/config/
-
-Request Type: GET Response: Current config applied on node.
-
+URL: https://<Base URL>/nodes/config/<host_identifier>
+ 
+Request Type: GET
+Response: Current config applied on node. 
+ 
 Example Response
-
-{ "status": "success", "message": "Successfully fetched the node config",
-"data": { "packs": {}, "win_include_paths": { "user_folders": [
-"C:\\Users\\\*\\Downloads\\" ] }, "options": { "custom_plgx_LogModeQuiet": "0",
-"custom_plgx_enable_respserver": "true", "schedule_splay_percent": 10,
-"custom_plgx_ServerHttpPort": "8280", "custom_plgx_ServerHttpsPort": "443",
-"logger_tls_compress": true, "custom_plgx_LogFileName":
-"\\ProgramData\\osquery\\plgx_win_extn\\log\\plgx-agent.log",  
-"custom_plgx_LogLevel": "1", "custom_plgx_EnableLogging": "true",
-"disable_watchdog": true, "host_identifier": "uuid", "custom_plgx_ServerPort":
-"443" }, "win_exclude_paths": { "temp_folders": [
-"C:\\Users\\\*\\Downloads\\exclude\\" ] }, "schedule": { "win_file_events": {
-"query": "select \* from win_file_events;", "interval": 10, "description": "win
-file events" } } } }
+ 
+{
+         "status": "success",
+         "message": "Successfully fetched the node config",
+         "data": {
+                        "packs": {},
+                        "win_include_paths": {
+                              "user_folders": [ 
+                              	"C:\\Users\\*\\Downloads\\"
+                               ]
+                         },
+                         "options": {
+                              "custom_plgx_LogModeQuiet": "0",
+                              "custom_plgx_enable_respserver": "true",
+                              "schedule_splay_percent": 10,
+                              "custom_plgx_ServerHttpPort": "8280",
+                              "custom_plgx_ServerHttpsPort": "443",
+                              "logger_tls_compress": true,
+                              "custom_plgx_LogFileName": "\\ProgramData\\osquery\\plgx_win_extn\\log\\plgx-agent.log",             
+                              "custom_plgx_LogLevel": "1",
+                              "custom_plgx_EnableLogging": "true",
+                              "disable_watchdog": true,
+                              "host_identifier": "uuid",
+                              "custom_plgx_ServerPort": "443"
+                           },
+                           "win_exclude_paths": {
+                               "temp_folders": [
+                              	"C:\\Users\\*\\Downloads\\exclude\\"
+                                ]
+                            },
+                            "schedule": {
+                                "win_file_events": {
+                                "query": "select * from win_file_events;",
+                                "interval": 10,
+                                "description": "win file events"
+                                 }
+                             }
+                  }
+}
 ```
 
 ### Assign a Config to a Node
@@ -464,17 +585,23 @@ host_identifier. When you assign a config to a node, one or more scheduled
 queries are assigned to the node.
 
 ```
-URL: https:/// nodes/config/assign
-
+URL: https://<Base URL>/ nodes/config/assign
+ 
 Request Type: POST
-
+ 
 Example Request
+ 
+{
+  "host_identifier": "<host_identifier>",
+  "config_id": 10,
+}
+ 
+Response
+{
+              	"status": "success",
+              	"message": "Successfully assigned the config"
 
-{ "host_identifier": "", "config_id": 10, }
-
-Response { "status": "success", "message": "Successfully assigned the config"
-
-} 
+}
 ```
 
 ### Remove a Config from a Node
@@ -484,14 +611,20 @@ host_identifier. When you remove a config to a node, one or more scheduled
 queries are removed from the node.
 
 ```
-URL: https:/// nodes/config/remove
-
+URL: https://<Base URL>/ nodes/config/remove
+ 
 Request Type: POST
-
+ 
 Example Request
-
-{ "host_identifier": "" } Response { "status": "success", "message":
-"Successfully removed the config" }
+ 
+{
+  "host_identifier": "<host_identifier>"
+}
+Response
+{
+              	"status": "success",
+              	"message": "Successfully removed the config"
+}
 ```
 
 Managing Queries
@@ -502,16 +635,27 @@ Managing Queries
 Define and run a live query on one or more nodes.
 
 ```
-URL: https:// /distributed/add Request Type: POST
-
-Example Request { "query": "select \* from system_info;", "tags": [ "demo" ],
-"nodes": [ "6357CE4F-5C62-4F4C-B2D6-CAC567BD6113" ] }
-
+URL: https://<Base URL> /distributed/add
+Request Type: POST
+ 
+Example Request
+{
+       "query": "select * from system_info;",
+       "tags": [
+        	"demo"
+        ],
+   	"nodes": [
+            "6357CE4F-5C62-4F4C-B2D6-CAC567BD6113"
+       ]
+}
+ 
 Response
-
-{ "status": "success", "message": "Successfully send the distributed query",
-“query_id": "1" }
-
+ 
+{
+    	"status": "success",
+    	"message": "Successfully send the distributed query",
+    	“query_id": "1"
+}
 ```
 
 ### Define a Scheduled Query
@@ -519,19 +663,30 @@ Response
 Define and assign a scheduled query.
 
 ```
-URL: https:// /queries/add Request Type: POST
-
-Example Request { "name": "running_process_query",
-
-"query": "select \* from processes;", "interval": 5, "platform": "windows",
-"version": "2.9.0", "description": "Processes", "value": "Processes" ,
-"tags":["finance","sales"] }
+URL: https://<Base URL> /queries/add
+Request Type: POST
+ 
+Example Request
+{
+"name": "running_process_query",
+ 
+"query": "select * from processes;",
+"interval": 5,
+"platform": "windows",
+"version": "2.9.0",
+"description": "Processes",
+"value": "Processes"
+,
+"tags":["finance","sales"]
+}
 
 Response
 
-{ "data": 104, "message": "Successfully created the query", "status": "success"
+{
+        	"data": 104,
+        	"message": "Successfully created the query",
+        	"status": "success"
 }
-
 ```
 
 ### List all Defined Queries
@@ -539,76 +694,163 @@ Response
 List all queries defined on the server. 
 
 ```
-URL: https:// /queries Request Type: GET
-
+URL: https://<Base URL> /queries
+Request Type: GET
+ 
 Response
 
-{ "data": [ { "description": "", "id": 103, "interval": 3600, "platform":
-"windows", "query": "select \* from win_removable_media_events;", "removed":
-false, "shard": 100, "tags": [], "value": "", "version": "" }
-
-], "message": "Successfully received the queries", "status": "success" }
-
+{
+  "data": [
+	{
+  	"description": "",
+  	"id": 103,
+  	"interval": 3600,
+  	"platform": "windows",
+  	"query": "select * from win_removable_media_events;",
+  	"removed": false,
+  	"shard": 100,
+  	"tags": [],
+  	"value": "",
+  	"version": ""
+	}
+  
+  ],
+  "message": "Successfully received the queries",
+  "status": "success"
+}
 ```
 
 ### List a Specific Query
 List a specific query defined on the server based on its ID.
 
 ```
-URL: https:// /queries/ Request Type: GET
-
+URL: https://<Base URL> /queries/<query_id>
+Request Type: GET
+ 
 Response
 
-{ "data": { "description": "YARA scan result events", "id": 3, "interval": 5,
-"platform": "windows", "query": "select \* from win_yara_events limit 10;",
-"removed": true, "shard": 100, "tags": [], "value": "scan results", "version":
-"2.9.0" }, "message": "Successfully fetched the query", "status": "success" }
-
+{
+	"data": {
+		"description": "YARA scan result events",
+		"id": 3,
+		"interval": 5,
+		"platform": "windows",
+		"query": "select * from win_yara_events limit 10;",
+		"removed": true,
+		"shard": 100,
+		"tags": [],
+		"value": "scan results",
+		"version": "2.9.0"
+	},
+	"message": "Successfully fetched the query",
+	"status": "success"
+}
 ```
 ### List all Packs
 Use this API to list all defined packs on the server. 
 
 ```
-URL: https:// /packs Request Type: GET
-
-
+URL: https://<Base URL> /packs
+Request Type: GET
+ 
 Response
 
-{ "data": [ { "discovery": [], "id": 1, "name": "all-query-pack", "platform":
-null, "queries": { "win_dns_events": { "description": "Windows DNS Events",
-"id": 8, "interval": 60, "platform": "windows", "query": "select \* from
-win_dns_events;", "removed": true, "shard": null, "tags": [], "value": "Dns
-events", "version": "2.9.0" } }, "shard": null, "tags": [], "version": null } ],
-"status": "success", "message": "Successfully received the packs" }
+{
+  "data": [
+    {
+      "discovery": [],
+      "id": 1,
+      "name": "all-query-pack",
+      "platform": null,
+      "queries": {
+        "win_dns_events": {
+          "description": "Windows DNS Events",
+          "id": 8,
+          "interval": 60,
+          "platform": "windows",
+          "query": "select * from win_dns_events;",
+          "removed": true,
+          "shard": null,
+          "tags": [],
+          "value": "Dns events",
+          "version": "2.9.0"
+        }
+      },
+      "shard": null,
+      "tags": [],
+      "version": null
+    }
+  ],
+  "status": "success",
+  "message": "Successfully received the packs"
+}
 ```
 
 ### List a Specific Pack
 Get details for a specific query pack defined on the server based on its ID.
 ```
-URL: https:// /packs/ Request Type: GET
-
+URL: https://<Base URL> /packs/<pack_id>
+Request Type: GET
+ 
 Response
 
-{ { "data": { "discovery": [], "id": 1, "name": "pack_1", "platform": null,
-"queries": { "win_yara_events": { "description": "YARA scan result events",
-"id": 4, "interval": 5, "platform": "windows", "query": "select \* from
-win_yara_events;", "removed": true, "shard": 100, "tags": [], "value": "scan
-results", "version": "2.9.0" } }, "shard": null, "tags": [], "version": null },
-"message": "Successfully fetched the pack", "status": "success" }
+{
+{
+	"data": {
+		"discovery": [],
+		"id": 1,
+		"name": "pack_1",
+		"platform": null,
+		"queries": {
+			"win_yara_events": {
+				"description": "YARA scan result events",
+				"id": 4,
+				"interval": 5,
+				"platform": "windows",
+				"query": "select * from win_yara_events;",
+				"removed": true,
+				"shard": 100,
+				"tags": [],
+				"value": "scan results",
+				"version": "2.9.0"
+			}
+		},
+		"shard": null,
+		"tags": [],
+		"version": null
+	},
+	"message": "Successfully fetched the pack",
+	"status": "success"
+}
 ```
 ### Define a Pack
 A group of scheduled queries is known as a pack. Use this API to define a new pack.
 ```
-URL: https:// /packs/add Request Type: POST
-
-Example Request { "name": "process_query_pack", "queries": { "win_file_events":
-{ "query": "select \* from processes;", "interval": 5, "platform": "windows",
-"version": "2.9.0", "description": "Processes", "value": "Processes" } },
-"tags":["finance","sales"] }
+URL: https://<Base URL> /packs/add
+Request Type: POST
+ 
+Example Request
+{
+"name": "process_query_pack",
+"queries": {
+"win_file_events": {
+"query": "select * from processes;",
+"interval": 5,
+"platform": "windows",
+"version": "2.9.0",
+"description": "Processes",
+"value": "Processes"
+}
+},
+"tags":["finance","sales"]
+}
 
 Response
 
-{ "message": "Imported query pack process_query_pack", "status": "success" }
+{
+        	"message": "Imported query pack process_query_pack",
+        	"status": "success"
+}
 ```
 
 Managing Tags
@@ -619,53 +861,90 @@ Managing Tags
 Get details for all tags defined on the server.
 
 ```
-URL: https:// /tags Request Type: GET
-
-Example Response { "data": [ "finance", "sales" ], "message": "Successfully
-received the tags", "status": "success" }
+URL: https://<Base URL> /tags
+Request Type: GET
+ 
+Example Response
+{
+        	"data": [
+                    	"finance",
+                    	"sales"
+        	],
+        	"message": "Successfully received the tags",
+        	"status": "success"
+}
 ```
 
 ### Add Tags
 Tags are a mechanism to logically group or associate elements such as nodes, packs, and so on. Add one or more tags.
 ```
-
-URL: https:// /tags/add Request Type: POST
-
-Example Request { "tags":["finance","sales"] }
-
-Response { "message": "Successfully added the tags", "status": "success" }
-
+URL: https://<Base URL> /tags/add
+Request Type: POST
+ 
+Example Request
+{
+"tags":["finance","sales"]
+}
+ 
+Response
+{
+        	"message": "Successfully added the tags",
+        	"status": "success"
+}
 ```
 ### Modify Tags for a Node
 Add or remove tags for a node.
 ```
-URL: https:// /nodes/tag/edit Request Type: POST
-
-Example Request { "host_identifier":"77858CB1-6C24-584F-A28A-E054093C8924",
-"add_tags":["finance","sales"], "remove_tags":["demo"] } Response { "message":
-"Successfully modified the tag(s)", "status": "success" }
-
+URL: https://<Base URL> /nodes/tag/edit
+Request Type: POST
+ 
+Example Request
+{
+"host_identifier":"77858CB1-6C24-584F-A28A-E054093C8924",
+"add_tags":["finance","sales"],
+"remove_tags":["demo"]
+}
+Response
+{
+        	"message": "Successfully modified the tag(s)",
+        	"status": "success"
+}
 ```
 ### Modify Tags for a Query
 Add or remove tags on a query.
 ```
-
-URL: https:// /queries/tag/edit Request Type: POST
-
-Example Request { "query_id":1, "add_tags":["finance","sales"],
-"remove_tags":["demo"] } Response { "message": "Successfully modified the
-tag(s)", "status": "success" }
-
+URL: https://<Base URL> /queries/tag/edit
+Request Type: POST
+ 
+Example Request
+{
+"query_id":1,
+"add_tags":["finance","sales"],
+"remove_tags":["demo"]
+}
+Response
+{
+        	"message": "Successfully modified the tag(s)",
+        	"status": "success"
+}
 ```
 ### Modify Tags on a Pack
 Add and remove tags on a pack.
 ```
-
-URL: https:// /packs/tag/edit Request Type: POST
-
-Example Request { "pack_id":1, "add_tags":["finance","sales"],
-"remove_tags":["demo"] } Response { "message": "Successfully modified the
-tag(s)", "status": "success" }
+URL: https://<Base URL> /packs/tag/edit
+Request Type: POST
+ 
+Example Request
+{
+"pack_id":1,
+"add_tags":["finance","sales"],
+"remove_tags":["demo"]
+}
+Response
+{
+        	"message": "Successfully modified the tag(s)",
+        	"status": "success"
+}
 ```
 
 Monitoring and Viewing Fleet Activity
@@ -677,59 +956,92 @@ Get all the data coming from a scheduled query for a specific endpoint node.
 This query will retrieve all the results that match from the PolyLogyx server
 database.
 
-```URL: https:///nodes/schedule_query/results Request Type: POST
-
-Example Request: { "host_identifier": "", "query": "win_file_events", "start":
-0, "limit": 100 }
-
+```URL: https://<Base URL >/nodes/schedule_query/results
+Request Type: POST
+ 
+Example Request:
+{
+  "host_identifier": "<host_identifier>",
+  "query": "win_file_events",
+  "start": 0,
+  "limit": 100
+}
+ 
+ 
 Example Response:
-
-{ "status": "success", "message": "Successfully received node schedule query
-results", "data": [ { "name": "win_file_events", "timestamp":
-"2018-07-24T07:09:38", "node_id": 6, "action": "added", "id": 948, "columns": {
-"uid": "poly-win10\\test", "pid": "4", "hashed": "1", "target_path":
-"C:\\Users\\test\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\Settings\\settings.dat",
-"pe_file": "NO", "eid": "0A253E4E-6996-11E8-BF2C-000D3A01FCC1", "time":
-"1528295378", "action": "WRITE", "utc_time": "Wed Jun 6 14:29:38 2018 UTC",
-"md5": "6eea00c4dd37725e90c027a60f3ce1a6" } }, { "name": "win_file_events",
-"timestamp": "2018-07-24T07:09:38", "node_id": 6, "action": "added", "id": 949,
-"columns": { "uid": "poly-win10\\test", "pid": "4", "hashed": "1",
-"target_path":
-"C:\\Users\\test\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\Settings\\settings.dat.LOG1",
-"pe_file": "NO", URL: https:///nodes/schedule_query/results Request Type: POST
-
-Example Request: { "host_identifier": "", "query": "win_file_events", "start":
-0, "limit": 100 }
-
-Example Response:
-
-{ "status": "success", "message": "Successfully received node schedule query
-results", "data": [ { "name": "win_file_events", "timestamp":
-"2018-07-24T07:09:38", "node_id": 6, "action": "added", "id": 948, "columns": {
-"uid": "poly-win10\\test", "pid": "4", "hashed": "1", "target_path":
-"C:\\Users\\test\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\Settings\\settings.dat",
-"pe_file": "NO", "eid": "0A253E4E-6996-11E8-BF2C-000D3A01FCC1", "time":
-"1528295378", "action": "WRITE", "utc_time": "Wed Jun 6 14:29:38 2018 UTC",
-"md5": "6eea00c4dd37725e90c027a60f3ce1a6" } }, { "name": "win_file_events",
-"timestamp": "2018-07-24T07:09:38", "node_id": 6, "action": "added", "id": 949,
-"columns": { "uid": "poly-win10\\test", "pid": "4", "hashed": "1",
-"target_path":
-"C:\\Users\\test\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\Settings\\settings.dat.LOG1",
-"pe_file": "NO", "eid": "0A253E4F-6996-11E8-BF2C-000D3A01FCC1", "time":
-"1528295378", "action": "WRITE", "utc_time": "Wed Jun 6 14:29:38 2018 UTC",
-"md5": "a8546005d1e59626d25c8884a1176a27" } }, { "name": "win_file_events",
-"timestamp": "2018-07-24T07:09:38", "node_id": 6, "action": "added", "id": 950,
-"columns": { "uid": "BUILTIN\\Administrators", "pid": "1688", "hashed": "1",
-"target_path": "C:\\Windows\\Prefetch\\IPCONFIG.EXE-62724FE6.pf", "pe_file":
-"NO", "eid": "0A253EC9-6996-11E8-BF2C-000D3A01FCC1", "time": "1528295396",
-"action": "WRITE", "utc_time": "Wed Jun 6 14:29:56 2018 UTC", "md5":
-"6507a711e37054b1ad1bec2d9daa6c28" } } ] } 
+ 
+{
+     	"status": "success",
+     	"message": "Successfully received node schedule query results",
+     	"data": [
+              	{
+                                	"name": "win_file_events",
+                                	"timestamp": "2018-07-24T07:09:38",
+                                	"node_id": 6,
+                                	"action": "added",
+                                	"id": 948,
+                                	"columns": {
+                                                  	"uid": "poly-win10\\test",
+                                                  	"pid": "4",
+                                                  	"hashed": "1",
+                                                  	"target_path": "C:\\Users\\test\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\Settings\\settings.dat",
+                                                  	"pe_file": "NO",
+                                                  	"eid": "0A253E4E-6996-11E8-BF2C-000D3A01FCC1",
+                                                  	"time": "1528295378",
+                                                  	"action": "WRITE",
+                                                  	"utc_time": "Wed Jun  6 14:29:38 2018 UTC",
+                                                  	"md5": "6eea00c4dd37725e90c027a60f3ce1a6"
+                                	}
+              	},
+              	{
+                                	"name": "win_file_events",
+                                	"timestamp": "2018-07-24T07:09:38",
+                                	"node_id": 6,
+                                	"action": "added",
+                                	"id": 949,
+                                	"columns": {
+                                                  	"uid": "poly-win10\\test",
+                                                  	"pid": "4",
+                                                  	"hashed": "1",
+                                                  	"target_path": "C:\\Users\\test\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\Settings\\settings.dat.LOG1",
+                                                  	"pe_file": "NO",
+                                                  	"eid": "0A253E4F-6996-11E8-BF2C-000D3A01FCC1",
+                                                  	"time": "1528295378",
+                                                  	"action": "WRITE",
+                                                  	"utc_time": "Wed Jun  6 14:29:38 2018 UTC",
+                                                  	"md5": "a8546005d1e59626d25c8884a1176a27"
+                                	}
+              	},
+              	{
+                                	"name": "win_file_events",
+                                	"timestamp": "2018-07-24T07:09:38",
+                                	"node_id": 6,
+                                	"action": "added",
+                                	"id": 950,
+                                	"columns": {
+                                                  	"uid": "BUILTIN\\Administrators",
+                                                  	"pid": "1688",
+                                                  	"hashed": "1",
+                                                  	"target_path": "C:\\Windows\\Prefetch\\IPCONFIG.EXE-62724FE6.pf",
+                                                  	"pe_file": "NO",
+                                                  	"eid": "0A253EC9-6996-11E8-BF2C-000D3A01FCC1",
+                                                  	"time": "1528295396",
+                                                  	"action": "WRITE",
+                                                  	"utc_time": "Wed Jun  6 14:29:56 2018 UTC",
+                                                  	"md5": "6507a711e37054b1ad1bec2d9daa6c28"
+                                	}
+              	}
+     	]
+}
 ```
 
 ### View Live Query Results 
 Live query results are streamed over a websocket. You can use any websocket client. Query results will expire, if not retrieved in 10 minutes.
 
+```
 URL: wss://<IP_ADDRESS:PORT>/distributed/result
+Send the query id as a message after connect
+```
 
 Managing Rules for Alerts
 -------------------------------------
