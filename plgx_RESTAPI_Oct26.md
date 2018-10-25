@@ -9,11 +9,8 @@ activities, which can then be used to craft an openc2 action.
 
 All payloads are exchanged over REST and use the JSON schema.
 
-API Concepts
-============
-
 REST Based API
---------------
+------------------
 
 -   Makes use of standard HTTP verbs like GET, POST, and DELETE.
 
@@ -121,14 +118,13 @@ debugging. The following header is set in each response:
 `X-PolyLogyx-Request-Id: reqVy8wsvmBQN27h4soUE3ZEnA`
 
 Fetching Node Details
-=====================
+-----------------
 
-Fetch Details for all Managed Nodes
------------------------------------
+### Fetch Details for all Managed Nodes
 
 Lists all endpoint nodes managed by the PolyLogyx server and their properties.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 URL: https://<Base URL>/nodes
  
 Request Type: GET
@@ -163,51 +159,37 @@ Example Response
     "message": "Successfully fetched the nodes",
     "status": "success"
 }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-Fetch Detailed Information for all Managed Nodes
-------------------------------------------------
+### Fetch Detailed Information for all Managed Nodes
 
 Fetch detailed information for all endpoint nodes managed by the PolyLogyx
 server.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TO BE ADDED 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TO BE ADDED - GETDETAILEDNODEINFO 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-GETDETAILEDNODEINFO
 
-Fetch Details for Specific Managed Node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Fetch Details for Specific Managed Node
 
 Lists information and properties for a specific managed endpoint based on
 host_identifier.
 
+``` 
 URL: https:///nodes/
-
 Request Type: GET Response: A node with its properties.
-
 Example Response
-
-{ "data": { "enrolled_on": "2018-07-24 06:22:48", "host_identifier":
-"77858CB1-6C24-584F-A28A-E054093C8924", "last_checkin": "2018-08-01 13:42:05",
-"network_info": { "mac_address": "54:26:96:d7:9a:65" }, "node_info": {
-"computer_name": "", "cpu_physical_cores": "2", "hardware_model":
-"MacBookPro10,2", "hardware_serial": "C02KV7RJDR53", "hardware_vendor": "Apple
-Inc.", "physical_memory": "8589934592" }, "node_key":
-"10b18bd8-9e5e-455f-bd48-8d7c456b841f", "tags": [ "second", "thirdsssss",
-"first" ] }, "message": "Successfully fetched the node info", "status":
-"success" } \`\`\`
+{ "data": { "enrolled_on": "2018-07-24 06:22:48", "host_identifier": "77858CB1-6C24-584F-A28A-E054093C8924", "last_checkin": "2018-08-01 13:42:05", "network_info": { "mac_address": "54:26:96:d7:9a:65" }, "node_info": { "computer_name": "", "cpu_physical_cores": "2", "hardware_model": "MacBookPro10,2", "hardware_serial": "C02KV7RJDR53", "hardware_vendor": "Apple Inc.", "physical_memory": "8589934592" }, "node_key": "10b18bd8-9e5e-455f-bd48-8d7c456b841f", "tags": [ "second", "thirdsssss", "first" ] }, "message": "Successfully fetched the node info", "status": "success" }
+```
 
 Managing Configs
-================
+-----------------
 
-**Get Schema info for all Tables**
+### Get Schema info for all Tables**
 
 List all the table schemas supported by the server.
 
-\`\`\` URL: https://\<Base URL\> /schema
+``` 
+URL: https://\<Base URL\> /schema
 
 Request Type: GET
 
@@ -305,13 +287,14 @@ INTEGER, type TEXT, crash_path TEXT)"
 
 }
 
-\`\`\`
+```
 
 ### Get Schema info for Specific Table from Server
 
 List the table schemas for a specific table from the server.
 
-\`\`\` URL: https://\<Base URL\> /schema/\<table_name\>
+```
+URL: https://\<Base URL\> /schema/\<table_name\>
 
 Request Type: GET
 
@@ -329,13 +312,14 @@ BIGINT)",
 
 }
 
-\`\`\`
+```
 
 ### Get All Available Configs from Server
 
 Lists all available configs that can be applied to managed nodes.
 
-`"user_folders": [
+```
+"user_folders": [
 "C:\\Temp\\",
 "C:\\Users\\Default\\Downloads\\"
 ]                                                                       },
@@ -390,14 +374,16 @@ Example Response
 "win_include_paths": { "user_folders": [ "C:\\Users\\\*\\Downloads\\" ] } },
 "created_at": null, "id": 3, "name": "poly-config-new", "updated_at":
 "2018-08-01 15:04:10" }, "message": "Successfully fetched the data", "status":
-"success" } \`\`\`
+"success" } 
+```
 
 ### Create a new Config on the Server
 
 Create a config by mixing a combination of packs, queries and other supported
 configurations.
 
-\`\`\`URL: https:///configs/add
+```
+URL: https:///configs/add
 
 Request Type: POST
 
@@ -410,13 +396,15 @@ file events" } }, "win_include_paths": { "user_folders": [
 "C:\\Users\\\*\\Downloads\\exclude\\" ] } } }
 
 Response { "status": "success", "message": "Successfully added the config",
-"config_id": 10 } \`\`\`
+"config_id": 10 } 
+```
 
 ### Update a Config on the Server 
 
 Use this API to modify information for a specific config based on its ID.
 
-\`\`\` URL: https:///configs/
+```
+URL: https:///configs/
 
 Request Type: POST
 
@@ -438,16 +426,17 @@ Response
 "2018-08-01 15:04:10" }, "message": "Successfully updated the config", "status":
 "success" }
 
-\`\`\`
+```
 
 Managing Node Configuration
-===========================
+-----------------
 
 ### Get Node Configuration 
 
 Get the config for a node based on host_identifier.
 
-\`\`\` URL: https:///nodes/config/
+```
+URL: https:///nodes/config/
 
 Request Type: GET Response: Current config applied on node.
 
@@ -465,7 +454,8 @@ Example Response
 "443" }, "win_exclude_paths": { "temp_folders": [
 "C:\\Users\\\*\\Downloads\\exclude\\" ] }, "schedule": { "win_file_events": {
 "query": "select \* from win_file_events;", "interval": 10, "description": "win
-file events" } } } } \`\`\`
+file events" } } } }
+```
 
 ### Assign a Config to a Node
 
@@ -473,7 +463,8 @@ Use this API to assign a specific config based on its ID to a node based on its
 host_identifier. When you assign a config to a node, one or more scheduled
 queries are assigned to the node.
 
-\`\`\` URL: https:/// nodes/config/assign
+```
+URL: https:/// nodes/config/assign
 
 Request Type: POST
 
@@ -483,7 +474,8 @@ Example Request
 
 Response { "status": "success", "message": "Successfully assigned the config"
 
-} \`\`\`
+} 
+```
 
 ### Remove a Config from a Node
 
@@ -491,24 +483,25 @@ Use this API to assign a remove assigned config from a node based on its
 host_identifier. When you remove a config to a node, one or more scheduled
 queries are removed from the node.
 
-\`\`\` URL: https:/// nodes/config/remove
+```
+URL: https:/// nodes/config/remove
 
 Request Type: POST
 
 Example Request
 
 { "host_identifier": "" } Response { "status": "success", "message":
-"Successfully removed the config" } \`\`\`
+"Successfully removed the config" }
+```
 
 Managing Queries
-================
+-----------------
 
 ### Run a Live Query
 
 Define and run a live query on one or more nodes.
 
-\`\`\`
-
+```
 URL: https:// /distributed/add Request Type: POST
 
 Example Request { "query": "select \* from system_info;", "tags": [ "demo" ],
@@ -519,16 +512,13 @@ Response
 { "status": "success", "message": "Successfully send the distributed query",
 “query_id": "1" }
 
-\`\`\`
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Define a Scheduled Query
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Define a Scheduled Query
 
 Define and assign a scheduled query.
 
-\`\`\`
-
+```
 URL: https:// /queries/add Request Type: POST
 
 Example Request { "name": "running_process_query",
@@ -542,18 +532,13 @@ Response
 { "data": 104, "message": "Successfully created the query", "status": "success"
 }
 
-\`\`\`
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-List all Defined Queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### List all Defined Queries
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 List all queries defined on the server. 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-\`\`\`
-
+```
 URL: https:// /queries Request Type: GET
 
 Response
@@ -564,14 +549,12 @@ false, "shard": 100, "tags": [], "value": "", "version": "" }
 
 ], "message": "Successfully received the queries", "status": "success" }
 
-\`\`\`
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-List a Specific Query
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+### List a Specific Query
 List a specific query defined on the server based on its ID.
 
+```
 URL: https:// /queries/ Request Type: GET
 
 Response
@@ -581,18 +564,13 @@ Response
 "removed": true, "shard": 100, "tags": [], "value": "scan results", "version":
 "2.9.0" }, "message": "Successfully fetched the query", "status": "success" }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-List all Packs
+```
+### List all Packs
 Use this API to list all defined packs on the server. 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 URL: https:// /packs Request Type: GET
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Response
 
@@ -602,12 +580,11 @@ null, "queries": { "win_dns_events": { "description": "Windows DNS Events",
 win_dns_events;", "removed": true, "shard": null, "tags": [], "value": "Dns
 events", "version": "2.9.0" } }, "shard": null, "tags": [], "version": null } ],
 "status": "success", "message": "Successfully received the packs" }
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-List a Specific Pack
+### List a Specific Pack
 Get details for a specific query pack defined on the server based on its ID.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+```
 URL: https:// /packs/ Request Type: GET
 
 Response
@@ -618,12 +595,10 @@ Response
 win_yara_events;", "removed": true, "shard": 100, "tags": [], "value": "scan
 results", "version": "2.9.0" } }, "shard": null, "tags": [], "version": null },
 "message": "Successfully fetched the pack", "status": "success" }
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Define a Pack
+```
+### Define a Pack
 A group of scheduled queries is known as a pack. Use this API to define a new pack.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+```
 URL: https:// /packs/add Request Type: POST
 
 Example Request { "name": "process_query_pack", "queries": { "win_file_events":
@@ -634,23 +609,25 @@ Example Request { "name": "process_query_pack", "queries": { "win_file_events":
 Response
 
 { "message": "Imported query pack process_query_pack", "status": "success" }
+```
 
-`Managing Tags`
-===============
+Managing Tags
+-----------------
 
 ### Get all Tags
 
 Get details for all tags defined on the server.
 
+```
 URL: https:// /tags Request Type: GET
 
 Example Response { "data": [ "finance", "sales" ], "message": "Successfully
 received the tags", "status": "success" }
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Add Tags
+### Add Tags
 Tags are a mechanism to logically group or associate elements such as nodes, packs, and so on. Add one or more tags.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 URL: https:// /tags/add Request Type: POST
 
@@ -658,21 +635,20 @@ Example Request { "tags":["finance","sales"] }
 
 Response { "message": "Successfully added the tags", "status": "success" }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Modify Tags for a Node
+```
+### Modify Tags for a Node
 Add or remove tags for a node.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+```
 URL: https:// /nodes/tag/edit Request Type: POST
 
 Example Request { "host_identifier":"77858CB1-6C24-584F-A28A-E054093C8924",
 "add_tags":["finance","sales"], "remove_tags":["demo"] } Response { "message":
 "Successfully modified the tag(s)", "status": "success" }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Modify Tags for a Query
+```
+### Modify Tags for a Query
 Add or remove tags on a query.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 URL: https:// /queries/tag/edit Request Type: POST
 
@@ -680,16 +656,17 @@ Example Request { "query_id":1, "add_tags":["finance","sales"],
 "remove_tags":["demo"] } Response { "message": "Successfully modified the
 tag(s)", "status": "success" }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Modify Tags on a Pack
+```
+### Modify Tags on a Pack
 Add and remove tags on a pack.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 URL: https:// /packs/tag/edit Request Type: POST
 
 Example Request { "pack_id":1, "add_tags":["finance","sales"],
 "remove_tags":["demo"] } Response { "message": "Successfully modified the
 tag(s)", "status": "success" }
+```
 
 Monitoring and Viewing Fleet Activity
 -------------------------------------
@@ -700,7 +677,7 @@ Get all the data coming from a scheduled query for a specific endpoint node.
 This query will retrieve all the results that match from the PolyLogyx server
 database.
 
-\`\`\` URL: https:///nodes/schedule_query/results Request Type: POST
+```URL: https:///nodes/schedule_query/results Request Type: POST
 
 Example Request: { "host_identifier": "", "query": "win_file_events", "start":
 0, "limit": 100 }
@@ -746,19 +723,18 @@ results", "data": [ { "name": "win_file_events", "timestamp":
 "target_path": "C:\\Windows\\Prefetch\\IPCONFIG.EXE-62724FE6.pf", "pe_file":
 "NO", "eid": "0A253EC9-6996-11E8-BF2C-000D3A01FCC1", "time": "1528295396",
 "action": "WRITE", "utc_time": "Wed Jun 6 14:29:56 2018 UTC", "md5":
-"6507a711e37054b1ad1bec2d9daa6c28" } } ] } \`\`\`
+"6507a711e37054b1ad1bec2d9daa6c28" } } ] } 
+```
 
 ### View Live Query Results 
+Live query results are streamed over a websocket. You can use any websocket client. Query results will expire, if not retrieved in 10 minutes.`
 
-`Live query results are streamed over a websocket. You can use any`  
-`websocket client. Query results will expire, if not retrieved in 10 minutes.`
-
-`` `URL: wss://<IP_ADDRESS:PORT>/distributed/result` ``
+```URL: wss://<IP_ADDRESS:PORT>/distributed/result ```
 
 ### Managing Rules for Alerts<br>List all the Rules
-
 List all rules defined for alerts on the server.
 
+```
 URL: https:// /rules Request Type: GET
 
 Response { "data": [ { "alerters": [ "email", "debug" ], "conditions": {
@@ -768,13 +744,11 @@ Response { "data": [ { "alerters": [ "email", "debug" ], "conditions": {
 test", "id": 1, "name": "Adult websites test", "status": "ACTIVE", "updated_at":
 "Tue, 31 Jul 2018 12:31:43 GMT" } ], "message": "Successfully received the alert
 rules", "status": "success" }
-
+```
 ### List a Specific Rule
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 List a specific rule defined on the server based on its ID.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+```
 URL: https:// /rules/ Request Type: GET
 
 Response { "data": { "alerters": [ "email", "debug" ], "conditions": {
@@ -784,11 +758,11 @@ Response { "data": { "alerters": [ "email", "debug" ], "conditions": {
 test", "id": 1, "name": "Adult websites test", "status": "ACTIVE", "updated_at":
 "Tue, 31 Jul 2018 12:31:43 GMT" }, "message": "Successfully fetched the rule",
 "status": "success" }
-
+```
 ### Add a Rule
-
 Define a rule to for a new alert.
 
+```
 URL: https:// /rules/add Request Type: POST
 
 Example request: { "alerters": [ "email","splunk" ], "name":"Adult website
@@ -805,11 +779,12 @@ Response
 
 { "data": 2, "message": "Successfully configured the rule", "status": "success"
 }
+```
 
 ### Modify a Rule
-
 Update an existing rule.
 
+```
 URL: https:// /rules/ Request Type: POST
 
 Example request:
@@ -827,9 +802,11 @@ Response: { "data": { "alerters": [ "email", "debug" ], "conditions": {
 test", "id": 1, "name": "Adult websites test", "status": "ACTIVE", "updated_at":
 "Wed, 01 Aug 2018 15:15:10 GMT" }, "message": "Successfully modified the rule",
 "status": "success" }
+```
 
 ### List all the Alerts Based on node, query_name, and rule_id
 
+```
 URL: https:// /alerts Request Type: POST
 
 Example Request:
@@ -846,9 +823,11 @@ Response { "data": [ { "created_at": "Tue, 31 Jul 2018 14:19:30 GMT", "id": 1,
 "user_time": "10908", "wired_size": "0" }, "node_id": 1, "query_name":
 "processes", "rule_id": 3, "sql": null } ], "message": "Successfully received
 the alerts", "status": "success" }
+```
 
 ### Configure email sender and recipients for alerts
 
+```
 URL: https:// /email/configure Request Type: POST
 
 Example request: { "emalRecipients": [ "mehtamouli1k\@gmail.com",
@@ -860,21 +839,14 @@ Response { "data": { "email": "mehtamoulik13\@gmail.com", "emailRecipients":
 "mehtamoulik\@gmail.com,moulik\@polylogyx.com", "password": "YQ==",
 "smtpAddress": "smtp2.gmail.com", "smtpPort": 445 }, "message": "Successfully
 updated the details", "status": "success" }
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Managing Responses
+-----------------
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##Managing Responses
-
-###List all the Response Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### List all the Response Commands
 Use this API to list all defined response commands. 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+```
 URL: https:// /response Request Type: GET
 
 Response
@@ -886,15 +858,12 @@ Response
 "command_id": "2c92808564cbab3d0164d135e21d0008", "id": 1, "message":
 "FILE_NOT_FOUND", "status": "failure" } ], "message": "Successfully received the
 response commands", "status": "success" }
+```
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ### List Specific Response Command
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Use this API to list a specific response command based on command_id.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+```
 URL: https:// /response/ Request Type: GET
 
 Response
@@ -907,12 +876,12 @@ Response
 "FILE_NOT_FOUND", "status": "failure" }, "message": "Successfully received the
 command status", "status": "success" }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-###Delete a File
+```
+### Delete a File
 
 Allows the SOC analyst to respond to a potential compromise by requesting the
 PolyLogyx server to delete a specific file on a node.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 URL: https:// /response/add Request Type: POST
 
@@ -925,12 +894,11 @@ Example Request
 Response: { "command_id": "2c92808564ebc9d20164f67fccdd000b", "message":
 "Successfully send the response command", "status": "success" }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 ### Kill a Process
 
 Allows the SOC analyst to terminate a process (identified by a process ID-pid) on a specific endpoint.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+```
 URL: https:// /response/add Request Type: POST
 
 Example Request
@@ -943,12 +911,11 @@ Example Request
 Response: { "command_id": "2c92808564ebc9d20164f67fccdd000b", "message":
 "Successfully send the response command", "status": "success" }
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 ### Carves
 
 List all the carve session. Host identifier is optional.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+```
 URL: https:// /carves Request Type: POST
 
 Example Request:
@@ -965,4 +932,4 @@ Response
 "session_id": "2N1P2UNDY6" } ], "message": "Successfully fetched the carves",
 "status": "success" }
 
-\`\`\`
+```
