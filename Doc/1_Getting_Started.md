@@ -47,8 +47,8 @@ events:
 
 -   YARA scan results
 
-For more information on the type of information, see [Using Recon
-Data](#using-recon-data).
+For more information on the type of information, see Using Recon
+Data.
 
 ### Intrusion detection
 
