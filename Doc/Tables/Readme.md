@@ -149,7 +149,7 @@ Stores information on Windows file timestomp events.
 | md5           | TEXT    | MD5 hash of file contents, if available    |
 | hashed        | INTEGER | Hash available or not                      |
 | pe_file       | TEXT    | True, if file is an executable binary file |
-| uid           | TEXT    | User name                                  |
+| uid           | TEXT    | User name of file owner                    |
 | time          | INTEGER | Time stamp of the event in unix format     |
 | utc_time      | TEXT    | Time stamp of the event in UTC             |
 
