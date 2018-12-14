@@ -39,6 +39,8 @@ Here are the PolyLogyx tables that allow real time activity monitoring
 
 -   [win_image_load_events](#win_image_load_events-table)
 
+-   [win_image_process_load_map](#win_image_process_load_map-table)
+
 -   [win_msr](#win_msr-table)
 
 -   [win_obfuscated_ps](#win_obfuscated_ps-table)
