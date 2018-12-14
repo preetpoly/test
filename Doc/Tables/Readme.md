@@ -39,7 +39,7 @@ Here are the PolyLogyx tables that allow real time activity monitoring
 
 -   [win_image_load_events](#win_image_load_events-table)
 
--   [win_image_process_load_map](#win_image_process_load_map-table)
+-   [win_image_load_process_map](#win_image_load_process_map-table)
 
 -   [win_msr](#win_msr-table)
 
@@ -200,7 +200,6 @@ Captures the load of binary executable files and their certificate information.
 
 ### win_image_load_process_map Table
 
-
 | Column               | Type    | Description                                     |
 |----------------------|---------|-------------------------------------------------|
 | pid                  | INTEGER | Process ID of the originating process           |
@@ -212,7 +211,6 @@ Captures the load of binary executable files and their certificate information.
 | image_base           | TEXT    | Base address of the Image being loaded          |
 | time                 | INTEGER | Unix timeTime stamp of the event in unix format |
 | utc_time             | TEXT    | Time stamp of the event in UTC                  |
-
 
 ### win_msr Table
 
