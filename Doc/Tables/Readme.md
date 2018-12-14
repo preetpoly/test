@@ -200,17 +200,17 @@ Captures the load of binary executable files and their certificate information.
 
 ### win_image_load_process_map Table
 
-| Column               | Type    | Description                                     |
-|----------------------|---------|-------------------------------------------------|
-| pid                  | INTEGER | Process ID of the originating process           |
-| process_guid         | TEXT    | Process Guid                                    |
-| image_path           | TEXT    | Path of the Image being loaded                  |
-| image_size           | TEXT    | Size of the Image being loaded                  |
-| md5                  | TEXT    | MD5 the Image being loaded                      |
-| image_memory_mode    | TEXT    | User mode/kernel mode                           |
-| image_base           | TEXT    | Base address of the Image being loaded          |
-| time                 | INTEGER | Unix timeTime stamp of the event in unix format |
-| utc_time             | TEXT    | Time stamp of the event in UTC                  |
+| Column               | Type    | Description                            |
+|----------------------|---------|----------------------------------------|
+| pid                  | INTEGER | Process ID of the originating process  |
+| process_guid         | TEXT    | Process Guid                           |
+| image_path           | TEXT    | Path of the Image being loaded         |
+| image_size           | TEXT    | Size of the Image being loaded         |
+| md5                  | TEXT    | MD5 the Image being loaded             |
+| image_memory_mode    | TEXT    | User mode/kernel mode                  |
+| image_base           | TEXT    | Base address of the Image being loaded |
+| time                 | INTEGER | Time stamp of the event in unix format |
+| utc_time             | TEXT    | Time stamp of the event in UTC         |
 
 ### win_msr Table
 
