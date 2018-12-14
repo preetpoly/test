@@ -155,18 +155,18 @@ Stores information on Windows file timestomp events.
 
 Captures the http requests and targets details.
 
-| Column               | Type    | Description                                     |
-|----------------------|---------|-------------------------------------------------|
-| event_type           | TEXT    | Http Events                                     |
-| eid                  | INTEGER | Unique Event identifier                         |
-| pid                  | TEXT    | Windows provided process id                     |
-| process_guid         | TEXT    | Process Guid                                    |
-| process_name         | TEXT    | Process Name                                    |
-| url                  | TEXT    | Http Url being visited                          |
-| remote_address       | TEXT    | Remote Address                                  |
-| remote_port          | INTEGER | Remote Port                                     |
-| time                 | INTEGER | Unix timeTime stamp of the event in unix format |
-| utc_time             | TEXT    | Time stamp of the event in UTC                  |
+| Column               | Type    | Description                            |
+|----------------------|---------|----------------------------------------|
+| event_type           | TEXT    | Http Events                            |
+| eid                  | INTEGER | Unique Event identifier                |
+| pid                  | TEXT    | Windows provided process id            |
+| process_guid         | TEXT    | Process Guid                           |
+| process_name         | TEXT    | Process Name                           |
+| url                  | TEXT    | Http Url being visited                 |
+| remote_address       | TEXT    | Remote Address                         |
+| remote_port          | INTEGER | Remote Port                            |
+| time                 | INTEGER | Time stamp of the event in unix format |
+| utc_time             | TEXT    | Time stamp of the event in UTC         |
 
 ### win_image_load_events Table
 
