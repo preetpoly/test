@@ -124,6 +124,7 @@ configuration.
 | pe_file      | TEXT    | Ture, if file is a executable (PE) file |
 | pid          | INTEGER | Process identifier                      |
 | process_name | TEXT    | Name of the process                     |
+| process_guid | TEXT    | Process Guid                            |
 
 ### win_file_timestomp_events Table
 
