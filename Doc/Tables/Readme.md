@@ -396,7 +396,7 @@ Captures the yara matches based on input rules.
 | target_path | TEXT    | Full path to be scanned                  |
 | category    | TEXT    | File group                               |
 | action      | INTEGER | File system action (created or modified) |
-| matches     | TEXT    | List of rules that matched               |
+| matches     | TEXT    | List of matched yara signatures          |
 | count       | INTEGER | Number of rules that matched             |
 
 osquery Tables
