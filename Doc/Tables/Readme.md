@@ -105,10 +105,10 @@ deployed on the endpoint.
 
 | Column             | Type | Description                       |
 |--------------------|------|-----------------------------------|
-| product_type       | TEXT | Endpoint product type             |
-| product_name       | TEXT | Endpoint product name             |
-| product_state      | TEXT | Endpoint product state (On/Off)   |
-| product_signatures | TEXT | Endpoint product signatures state |
+| product_type       | TEXT | Endpoint Product Type             |
+| product_name       | TEXT | Endpoint Product Name             |
+| product_state      | TEXT | Endpoint Product State (On/Off)   |
+| product_signatures | TEXT | Endpoint Product Signatures State |
 
 ### win_file_events Table
 
