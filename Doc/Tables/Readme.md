@@ -115,20 +115,20 @@ deployed on the endpoint.
 Captures file creation, deletion, and modification events based on the
 configuration.
 
-| Column       | Type    | Description                             |
-|--------------|---------|-----------------------------------------|
-| action       | TEXT    | Create, delete, or write events         |
-| eid          | TEXT    | Unique event identifier                 |
-| target_path  | TEXT    | Complete file path                      |
-| md5          | TEXT    | MD5 hash of file                        |
-| hashed       | INTEGER | Hash available or not                   |
-| uid          | TEXT    | User name                               |
-| time         | INTEGER | Unix time                               |
-| utc_time     | TEXT    | UTC time                                |
-| pe_file      | TEXT    | Ture, if file is a executable (PE) file |
-| pid          | INTEGER | Process identifier                      |
-| process_guid | TEXT    | Process Guid                            |
-| process_name | TEXT    | Name of the process                     |
+| Column       | Type    | Description                               |
+|--------------|---------|-------------------------------------------|
+| action       | TEXT    | Create, delete, or write events           |
+| eid          | TEXT    | Unique event identifier                   |
+| target_path  | TEXT    | Complete file path                        |
+| md5          | TEXT    | MD5 hash of file contents, if available   |
+| hashed       | INTEGER | Hash available or not                     |
+| uid          | TEXT    | User name of file owner                   |
+| time         | INTEGER | Time stamp of the event in unix format    |
+| utc_time     | TEXT    | Time stamp of the event in UTC            |
+| pe_file      | TEXT    | True, if file is a executable binary file |
+| pid          | INTEGER | Process identifier                        |
+| process_guid | TEXT    | Process Guid                              |
+| process_name | TEXT    | Name of the process                       |
 
 ### win_file_timestomp_events Table
 
