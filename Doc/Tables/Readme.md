@@ -276,7 +276,7 @@ Captures the creation and termination of processes.
 | cmdline             | TEXT    | Command line at process start                             |
 | parent_pid          | INTEGER | Windows provided Process identifier of the parent process |
 | parent_process_guid | TEXT    | Parent Process Guid                                       |
-| parent_path         | TEXT    | Path of parent process executable                         |
+| parent_path         | TEXT    | Path to parent process executable                         |
 | owner_uid           | TEXT    | Process owners’ user identifier                           |
 | time                | INTEGER | Time stamp of the event in unix format                    |
 | utc_time            | TEXT    | Time stamp of the event in UTC                            |
