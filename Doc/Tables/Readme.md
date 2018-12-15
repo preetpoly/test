@@ -359,7 +359,7 @@ Captures the insertion of a removable media.
 | Column                     | Type    | Description                               |
 |----------------------------|---------|-------------------------------------------|
 | eid                        | TEXT    | Unique event identifier                   |
-| removable_media_event_type | TEXT    | "Removable Media Events                   |
+| removable_media_event_type | TEXT    | Removable Media Events                   |
 | uid                        | TEXT    | User name of file owner                   |
 | pid                        | INTEGER | Windows provided process id               |
 | time                       | INTEGER | Time stamp of the event in unix format    |
