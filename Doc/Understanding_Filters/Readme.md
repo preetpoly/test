@@ -56,7 +56,7 @@ Before you define filters, review the following guidelines:
 Adding Filters
 --------------
 
-Filters operate on the [tables](#polylogyx-tables) and are defined in the
+Filters operate on the tables and are defined in the
 osquery configuration file. Use the JSON syntax to define filters. Place all
 filters within the plgx_event_filters tag in the osquery configuration file.
 Here is the syntax used to define a filter.
