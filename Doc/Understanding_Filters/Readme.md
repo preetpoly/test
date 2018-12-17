@@ -170,10 +170,10 @@ Event filtering is supported on following tables (and fields or columns).
 
 | Table Name                                                  | Supported Columns |
 |-------------------------------------------------------------|-------------------|
-| [win_process_events](#win_process_events-table)             | cmdline, path, and parent_path           |
-| [win_registry_events](#win_registry_events-table)           | target_name       |
-| [win_socket_events](#win_socket_events-table)               | process_name, remote_port, and remote_address      |
-| [win_file_events](#win_file_events-table)                   | target_path and process_name       |
-| [win_remote_thread_events](#win_remote_thread_events-table) | src_path, target_path, and function_name          |
-| [win_dns_events](#win_dns_events-table)                     | domain_name       |
-| [win_dns_response_events](#win_dns_response_events-table)   | domain_name       |
+|  win_process_events                                         | cmdline, path, and parent_path           |
+|  win_registry_events                                        | target_name       |
+|  win_socket_events                                          | process_name, remote_port, and remote_address      |
+|  win_file_events                                            | target_path and process_name       |
+|  win_remote_thread_events                                   | src_path, target_path, and function_name          |
+|  win_dns_events                                             | domain_name       |
+|  win_dns_response_events                                    | domain_name       |
