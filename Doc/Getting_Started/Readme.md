@@ -20,9 +20,9 @@ At a high-level, the PolyLogyx platform provides these features.
 
 ### Monitoring and visibility
 
-Allows you view and monitor endpoint-related information. You are always
+Allows you to view and monitor endpoint-related information. You will always be
 informed of what is occurring at all times on all managed endpoints. It helps
-you meet your compliance needs and get real-time insight into network activity.
+you to meet your compliance needs and get real-time insight into network activity.
 
 In addition to standard osquery events, you can also get information about these
 events:
@@ -56,7 +56,7 @@ To allow detection of malicious activities, PolyLogyx offers:
 
 -   Alerting – You can set up rules to define alerts to stay updated on
     pertinent activities. After you set up a rule for an event, you receive an
-    email when the event occurs allowing you to take immediate action.
+    email when the event occurs, allowing you to take immediate action.
 
 -   Threat intelligence – You can connect with various threat intel sources,
     such as Virus Total.
