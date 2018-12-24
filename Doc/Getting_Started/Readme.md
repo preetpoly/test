@@ -20,8 +20,8 @@ At a high-level, the PolyLogyx platform provides these features.
 
 ### Monitoring and visibility
 
-Allows you to view and monitor endpoint-related information. You will always be
-informed of what is occurring at all times on all managed endpoints. It helps
+Allows you to view and monitor endpoint-related information. You will always 
+be informed of what is occurring at all times on all managed endpoints. It helps
 you to meet your compliance needs and get real-time insight into network activity.
 
 In addition to standard osquery events, you can also get information about these
