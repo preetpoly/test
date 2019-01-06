@@ -1,6 +1,3 @@
-Getting Started
-===============
-
 The PolyLogyx Endpoint Visibility and Control Platform is built for cloud and
 SOCs. It provides endpoint monitoring and visibility, threat detection and
 incident response for Security operating Centres (SOCs).
