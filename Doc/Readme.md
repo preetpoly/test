@@ -44,8 +44,11 @@ events:
 
 -   YARA scan results
 
-For more information on the type of information, see Using Recon
-Data.
+-   Monitoring Per process resource usage (CPU/Memory)
+
+-   Application Log monitoring
+
+For more information on the type of information, see [PolyLogyx OSquery Extension][https://github.com/polylogyx/osq-ext-bin]
 
 ### Intrusion detection
 

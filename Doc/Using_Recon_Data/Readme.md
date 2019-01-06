@@ -3,9 +3,8 @@ Using Recon Data
 
 As the name suggests, recon refers to preliminary research or analysis. After
 the PolyLogyx client is provisioned and the connection to the PolyLogyx server
-is established, seeded recon queries are run to pull relevant information for
-each node. These out-of-box queries run every 30 minutes to fetch data from the
-nodes and require no configuration.
+is established, seeded recon queries can be run to pull relevant information for
+each node. These queries can be run as a collection or individually on the individual node by navigating to the node specific page. The recon queries can be very useful in discovering the endpoint state and properties typically abused by malware to gain persistence on the system.
 
 Understanding reported data
 ---------------------------
