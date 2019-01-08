@@ -48,7 +48,7 @@ events:
 
 -   Application Log monitoring
 
-For more information on the type of information, see [PolyLogyx OSquery Extension][https://github.com/polylogyx/osq-ext-bin]
+For more information on the type of information, see [PolyLogyx OSquery Extension](https://github.com/polylogyx/osq-ext-bin)
 
 ### Intrusion detection
 
