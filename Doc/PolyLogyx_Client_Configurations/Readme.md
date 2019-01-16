@@ -17,8 +17,11 @@ The entire list of flags supported by osquery can be found at osquery flags. Som
 This flag tells the osquery agent to load an extension as part of osquery initialization. The extensions.load contains the location to the PolyLogyx Extension file. It is strongly recommended not to change this flag.
 
 --extensions_interval=10
+
 --extensions_timeout=90
+
 --extensions_require=plgx_win_extension
+
 --allow_unsafe
 
 These flags control the extension loading behavior of the osquery agent. It is strongly recommended not to change these.
