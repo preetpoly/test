@@ -90,7 +90,7 @@ server.
     Generating a 2048 bit RSA private key
     ................................................................................+++
     .........................+++
-    writing new private key to 'Doorman/private.key``` 
+    writing new private key to 'ngnix/private.key``` 
             
 In the syntax, \<IP address\> is the IP address of the system on which on to
 host the PolyLogyx server. This will generate the certificate for osquery (used
@@ -101,8 +101,8 @@ for provisioning clients) and place the certificate in the plgx_docker folder.
     1.  Edit the following configuration parameters in the file. In the syntax, replace the values in angle brackets with required values.
 ```
 ENROLL_SECRET=<secret value>
-DOORMAN_USER=<user login name>
-DOORMAN_PASSWORD=<login password>
+POLYLOGYX_USER=<user login name>
+POLYLOGYX_PASSWORD=<login password>
 ```  
              
 1.  Ensure all the ports specified in the YAML file are open and accessible
