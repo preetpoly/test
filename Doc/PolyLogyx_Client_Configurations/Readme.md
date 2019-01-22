@@ -9,6 +9,7 @@ This configuration is specified by following:
 
 
 osquery.flags
+Location : C:\programdata\osquery\osquery.flags
 
 The entire list of flags supported by osquery can be found at osquery flags. Some of the key values relevant for PolyLogyx platform are described below. These can be changed/modified to suit the deployment environment specific needs however altering these variables can significantly alter the performance of the endpoint agent. The variables are passed to the client agent during the <link>Client Provisioning</link> via the file osquery.flags 
 
