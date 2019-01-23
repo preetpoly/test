@@ -1,21 +1,34 @@
 The PolyLogyx Endpoint Visibility and Control Platform leverages osquery as the agent along side an extension built by PolyLogyx for real-time telemetry and response commands on Windows.
 
-The platform comes with a default set of configuration needed for osquery initialization and functioning. 
-This configuration is specified by following:
+After the PolyLogyx client is provisioned, the default and seeded configuration set comes into play. If needed, you can customize the various configuration settings defined for the PolyLogyx client. 
 
-1. osquery.flags
-2. Default configuration
-3. Options
+To customize the configuration settings, you can modify the following:
+
+1. osquery.flags file 
+2. Predefined filters and queries
+3. PolyLogyx configuration options
+
+The osquery.flags File
+--------------------------------
+
+The osquery.flags file includes all the paramnetres needed for osquery initialization and functioning. By default, this file is stored in the C:\programdata\osquery folder. 
 
 
-osquery.flags
-Location : C:\programdata\osquery\osquery.flags
+Althugh this file contains all the flags supported by osquery, in this section, we will discuss only the key flags that are relevant for the PolyLogyx platform. 
 
-The entire list of flags supported by osquery can be found at osquery flags. Some of the key values relevant for PolyLogyx platform are described below. These can be changed/modified to suit the deployment environment specific needs however altering these variables can significantly alter the performance of the endpoint agent. The variables are passed to the client agent during the <link>Client Provisioning</link> via the file osquery.flags 
+Update the parameters to configure the deployment environment to meet your specific needs. Note that modifying these values may significantly alter the performance of the endpoint agent. These configured values are passed to the endpoint agent during the <link>Client Provisioning</link> through the osquery.flags file.
 
---extensions_autoload=C:\programdata\osquery\extensions.load
 
-This flag tells the osquery agent to load an extension as part of osquery initialization. The extensions.load contains the location to the PolyLogyx Extension file. It is strongly recommended not to change this flag.
+| Flag | Description                                                                                                                                                                                  |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --extensions_autoload=C:\programdata\osquery\extensions.load | Informs the osquery agent to load an extension as part of osquery initialization. The extensions.load contains the location to the PolyLogyx Extension file. We recommended that you DO NOT change this flag.                                                                                                                                  |
+| \-k       | Indicates the full path to the server public key file. This is a required parameter.                                                                                                         |
+| \-p       | Represents the server port. This is an optional parameter and defaults to 9000.                                                                                                              |
+| \-v       | Represents the osquery version to be installed. Currently, only version 3.2.6 is supported. This is an optional parameter. If you do not specify a version, the latest version is installed. |
+
+
+
+  
 
 --extensions_interval=10
 
