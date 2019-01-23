@@ -22,23 +22,20 @@ Update the parameters to configure the deployment environment to meet your speci
 | Flag | Description                                                                                                                                                                                  |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | --extensions_autoload=C:\programdata\osquery\extensions.load | Informs the osquery agent to load an extension as part of osquery initialization. The extensions.load contains the location to the PolyLogyx Extension file. We recommended that you DO NOT change this flag.                                                                                                                                  |
-| \-k       | Indicates the full path to the server public key file. This is a required parameter.                                                                                                         |
-| \-p       | Represents the server port. This is an optional parameter and defaults to 9000.                                                                                                              |
-| \-v       | Represents the osquery version to be installed. Currently, only version 3.2.6 is supported. This is an optional parameter. If you do not specify a version, the latest version is installed. |
+| --extensions_interval=10
+| --extensions_timeout=90
+| --extensions_require=plgx_win_extension
+| --allow_unsafe       | These flags control the extension loading behavior of the osquery agent. We recommended that you DO NOT change this flag. 
+                                                                                                      |
+
 
 
 
   
 
---extensions_interval=10
 
---extensions_timeout=90
 
---extensions_require=plgx_win_extension
 
---allow_unsafe
-
-These flags control the extension loading behavior of the osquery agent. It is strongly recommended not to change these.
 
 
 --disable_watchdog=true
