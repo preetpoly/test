@@ -28,9 +28,16 @@ Update the parameters to configure the deployment environment to meet your speci
 | config_tls_refresh=300 | Governs the refresh interval of agent config. Any changes to the agent configuration (as defined below) will get picked by the agent after this interval.|
 
 
-Default agent configuration
-
-As soon as an agent checks-in with the server, a default configuration is applied to the agent based on the operating system of the endpoint. The configuration contains the list of scheduled queries that are applied on the agent. This configuration can be viewed by navigating via the web interface to the server under 'view -> configs'. The configuration consists of the scheduled query intervals for varioud osquery tables. For Windows operating system, PolyLogyx Extension is part of the agent and therefore the configuration carries additional filtering criteria to eliminate a great deal of 'white noise' from the real time telemetry and a set of scheduled queries that captures all the process creation and network connections data from the endpoint. The configurations are edit-able and the changes in the config gets picked up by the endpoint based on --config_tls_refresh. The edits can be done to add more queries, change the schedules or filters. For a detailed read on filters, please look at the "Understanding_Filters" section.
+Predefined filters and queries
+---------------
+As soon as an agent checks-in with the server, a default configuration is applied to the agent based on the operating system of the endpoint. The configuration contains the list of scheduled queries and filters that are applied on the agent. 
+Perform these steps to view or edit this configuration:
+1. Access the web interface for the server.
+2. Navigate to View  > Configs. 
+The configuration consists of the scheduled query intervals for varioud osquery tables. 
+ - For Windows operating system, PolyLogyx Extension is part of the agent and therefore the configuration carries additional filtering criteria to eliminate 'white noise' from the real time telemetry and a set of scheduled queries that captures all the process creation and network connections data from the endpoint. The configurations are editable and the changes in the config gets picked up by the endpoint based on the config_tls_refresh value in th osquery.flags file. The edits can be done to add more queries, change the schedules or filters. 
+ 
+ For a detailed information on filters, review the "Understanding_Filters" section.
 
 Options
 
