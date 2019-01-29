@@ -32,7 +32,10 @@ Predefined filters and queries
 As soon as an agent checks-in with the server, a default configuration is applied to the agent based on the operating system of the endpoint. The configuration contains the list of scheduled queries and filters that are applied on the agent. 
 Perform these steps to view or edit this configuration:
 1. Access the web interface for the server.
-2. Navigate to View  > Configs. 
+2. Navigate to View  > Configs.
+
+![configs_menu](https://github.com/preetpoly/test/blob/pooja/configs_menu.png)
+
 The configuration consists of the scheduled query intervals for various osquery tables. 
 
 For Windows operating system, PolyLogyx Extension is part of the agent and therefore the configuration carries additional filtering criteria to eliminate 'white noise' from the real time telemetry and a set of scheduled queries that captures all the process creation and network connections data from the endpoint. The configurations are editable and the changes in the configuration gets picked up by the endpoint based on the config_tls_refresh value in the osquery.flags file. The edits can be done to add more queries, change the schedules or filters. 
@@ -44,9 +47,16 @@ PolyLogyx configuration options
 The PolyLogyx configuration options are global in nature and are applied to all agents in addition to the agent configurations. 
 Perform these steps to view or edit this configuration:
 1. Access the web interface for the server.
-2. Navigate to Management > Options. 
+2. Navigate to Management > Options.
+
+![options_menu](https://github.com/preetpoly/test/blob/pooja/options_menu.png)
+
+3. Review the listed options. 
+
 ![poly_options](https://github.com/preetpoly/test/blob/pooja/poly_options.png)
 
+4. Edit the option values, as needed, and click <b>update option</b>.
+Here are the options descriptions. 
 
 | Option | Description                                                                                                                                                                                 |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
