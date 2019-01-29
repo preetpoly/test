@@ -64,14 +64,12 @@ Perform these steps to view or edit this configuration:
 
 | Option | Description                                                                                                                                                                                         |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| custom_plgx_EnableLogging |   | 
-| custom_plgx_LogLevel | |
-| custom_plgx_LogFileName | |
-| custom_plgx_LogModeQuiet | |
-| custom_plgx_ServerPort | |
-| custom_plgx_enable_respserver | |
-| schedule_splay_percent  | TBA |  
-
-Options in osquery allow for custom parameters that an extension can use. PolyLogyx Extension provides the feature of 'Live Response' and the options control the switch to enable/disable the response feature and its associate control flags.
+| custom_plgx_EnableLogging | Specifies where to enable logging for the PolyLogyx Extension. By default, set to true.   | 
+| custom_plgx_LogFileName | Specfies the name and location of the log file.   |
+| custom_plgx_LogLevel | Indicates the logging level for the PolyLogyx Extension. possible values TBA. By default, set to ?.  |
+| custom_plgx_LogModeQuiet | Specifies TBA |
+| custom_plgx_ServerPort | Specifies the port on which the PolyLogyx server is listening. By default, this is set to 443. |
+| custom_plgx_enable_respserver | PolyLogyx Extension provides the feature of <i>Live Response</i>. This option allows you to enable or disable the response feature. By default, this is enabled. |
+| schedule_splay_percent  |  TBD  |  
  
 
