@@ -34,11 +34,15 @@ Perform these steps to view or edit this configuration:
 1. Access the web interface for the server.
 2. Navigate to View  > Configs.
 
-![configs_menu](https://github.com/preetpoly/test/blob/pooja/configs_menu.png)
+   ![configs_menu](https://github.com/preetpoly/test/blob/pooja/configs_menu.png)
 
-The configuration consists of the scheduled query intervals for various osquery tables. 
+   The configuration consists of the scheduled query intervals for various osquery tables. 
+3. Select a table fromt the list, such as default_config_windows.
 
-For Windows operating system, PolyLogyx Extension is part of the agent and therefore the configuration carries additional filtering criteria to eliminate 'white noise' from the real time telemetry and a set of scheduled queries that captures all the process creation and network connections data from the endpoint. The configurations are editable and the changes in the configuration gets picked up by the endpoint based on the config_tls_refresh value in the osquery.flags file. The edits can be done to add more queries, change the schedules or filters. 
+   ![configs_list](https://github.com/preetpoly/test/blob/pooja/configs_list.png)
+
+
+    For Windows operating system, PolyLogyx Extension is part of the agent and therefore the configuration carries additional filtering criteria to eliminate 'white noise' from the real time telemetry and a set of scheduled queries that captures all the process creation and network connections data from the endpoint. The configurations are editable and the changes in the configuration gets picked up by the endpoint based on the config_tls_refresh value in the osquery.flags file. The edits can be done to add more queries, change the schedules or filters. 
  
 For more information on filters, review the "Understanding Filters" section.
 
