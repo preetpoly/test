@@ -50,7 +50,8 @@ Perform these steps to view or edit this configuration:
 
 | Option | Description                                                                                                                                                                                 |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| custom_plgx_EnableLogging |   |                                                                                                                               | custom_plgx_LogLevel | |
+| custom_plgx_EnableLogging |   | 
+| custom_plgx_LogLevel | |
 | custom_plgx_LogFileName | |
 | custom_plgx_LogModeQuiet | |
 | custom_plgx_ServerPort | |
