@@ -46,6 +46,17 @@ Perform these steps to view or edit this configuration:
 1. Access the web interface for the server.
 2. Navigate to Management > Options. 
 ![poly_options](https://github.com/preetpoly/test/blob/pooja/poly_options.png)
+
+
+| Option | Description                                                                                                                                                                                 |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| custom_plgx_EnableLogging |   |                                                                                                                               | custom_plgx_LogLevel | |
+| custom_plgx_LogFileName | |
+| custom_plgx_LogModeQuiet | |
+| custom_plgx_ServerPort | |
+| custom_plgx_enable_respserver | |
+| schedule_splay_percent  | TBA |  
+
 Options in osquery allow for custom parameters that an extension can use. PolyLogyx Extension provides the feature of 'Live Response' and the options control the switch to enable/disable the response feature and its associate control flags.
-WE NEED TO DETAIL ALL OPTIONS IN A TABLE 
+ 
 
