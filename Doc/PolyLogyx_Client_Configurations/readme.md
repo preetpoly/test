@@ -1,9 +1,7 @@
 Configuring the PolyLogyx Client
 ================================================
 
-The PolyLogyx Endpoint Visibility and Control Platform leverages osquery as the agent alongside an extension built by PolyLogyx for real-time telemetry and response commands on Windows.
-
-After the PolyLogyx client is provisioned, the default and seeded configuration set comes into play. If needed, you can customize the various configuration settings defined for the PolyLogyx client. 
+After the PolyLogyx client is provisioned, the default and seeded configuration comes into play. If needed, you can customize the various configuration settings defined for the PolyLogyx client. 
 
 To customize the configuration settings, you can modify the following:
 
@@ -13,13 +11,11 @@ To customize the configuration settings, you can modify the following:
 
 The osquery.flags File
 --------------------------------
-
 The osquery.flags file includes all the parameters needed for osquery initialization and functioning. By default, this file is stored in the C:\programdata\osquery folder. 
-
 
 Although this file contains all the flags supported by osquery, in this section, we will discuss only the key flags that are relevant for the PolyLogyx platform. 
 
-Update the parameters to configure the deployment environment to meet your specific needs. Note that modifying these values may significantly alter the performance of the endpoint agent. These configured values are passed to the endpoint agent during the <link>Client Provisioning</link> through the osquery.flags file.
+Update the parameters to configure the deployment environment to meet your specific needs. Note that modifying these values may significantly alter the performance of the endpoint agent. These configured values are passed to the endpoint agent during the [client provisioning](https://github.com/preetpoly/test/tree/pooja/Doc/Provisioning_Polylogyx_Client#provisioning-the-polylogyx-client-for-endpoints) through the osquery.flags file.
 
 
 | Flag | Description                                                                                                                                                                                 |
