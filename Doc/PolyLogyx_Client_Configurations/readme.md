@@ -45,7 +45,7 @@ The PolyLogyx configuration options are global in nature and are applied to all 
 Perform these steps to view or edit this configuration:
 1. Access the web interface for the server.
 2. Navigate to Management > Options. 
-![poly_options](https://github.com/preetpoly/test/blob/master/poly_options.png)
+![poly_options](https://github.com/preetpoly/test/blob/pooja/poly_options.png)
 Options in osquery allow for custom parameters that an extension can use. PolyLogyx Extension provides the feature of 'Live Response' and the options control the switch to enable/disable the response feature and its associate control flags.
 WE NEED TO DETAIL ALL OPTIONS IN A TABLE 
 
