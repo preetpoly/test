@@ -48,7 +48,7 @@ For more information on filters, review the  [Understanding Filters](https://git
 
 PolyLogyx configuration options
 ---------------------
-The PolyLogyx configuration options are global in nature and are applied to all agents in addition to the agent configurations. 
+The PolyLogyx configuration options are global in nature and are applied to all agents in addition to the agent configurations. The PolyLogyx platform provides the feature of 'response action' thru the same osquery extension that is used to collect endpoint telemetry. The response action can be controlled via these configuration options alongwith other osquery options.
 Perform these steps to view or edit this configuration:
 1. Access the web interface for the server.
 2. Navigate to Management > Options.
@@ -64,12 +64,12 @@ Perform these steps to view or edit this configuration:
 
 | Option | Description                                                                                                                                                                                         |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| custom_plgx_EnableLogging | Specifies where to enable logging for the PolyLogyx Extension. By default, set to true.   | 
+| custom_plgx_EnableLogging | Specifies where to enable logging for the PolyLogyx Response Action on client. By default, set to true.   | 
 | custom_plgx_LogFileName | Specfies the name and location of the log file.   |
-| custom_plgx_LogLevel | Indicates the logging level for the PolyLogyx Extension. possible values TBA. By default, set to ?.  |
-| custom_plgx_LogModeQuiet | Specifies TBA |
-| custom_plgx_ServerPort | Specifies the port on which the PolyLogyx server is listening. By default, this is set to 443. |
-| custom_plgx_enable_respserver | PolyLogyx Extension provides the feature of <i>Live Response</i>. This option allows you to enable or disable the response feature. By default, this is enabled. |
-| schedule_splay_percent  |  TBD  |  
+| custom_plgx_LogLevel | Indicates the logging level for the PolyLogyx Response Action. possible values between 0 - 4. By default, set to 1 (Debug).  |
+| custom_plgx_LogModeQuiet | Specifies whether the log messages to be printed on console. Relavant only when running osquery as a console application |
+| custom_plgx_ServerPort | Specifies the port on which the PolyLogyx server is listening. By default, this is set to 443 and should not be changed |
+| custom_plgx_enable_respserver | This option allows you to enable or disable the response feature. By default, this is enabled. |
+| schedule_splay_percent  |  Percent to splay config times for scheduled queries   |  
  
 
