@@ -65,11 +65,12 @@ Perform these steps to view or edit this configuration:
 | Option | Description                                                                                                                                                                                         |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | custom_plgx_EnableLogging | Specifies where to enable logging for the PolyLogyx Response Action on client. By default, set to true.   | 
-| custom_plgx_LogFileName | Specfies the name and location of the log file.   |
-| custom_plgx_LogLevel | Indicates the logging level for the PolyLogyx Response Action. possible values between 0 - 4. By default, set to 1 (Debug).  |
-| custom_plgx_LogModeQuiet | Specifies whether the log messages to be printed on console. Relavant only when running osquery as a console application |
-| custom_plgx_ServerPort | Specifies the port on which the PolyLogyx server is listening. By default, this is set to 443 and should not be changed |
+| custom_plgx_LogFileName | Specifies the name and location of the log file.   |
+| custom_plgx_LogLevel | Indicates the logging level for the PolyLogyx Response Action. Possible values are 0 (Trace), 1 (Debug),
+  2 (Info), 3 (Warning), and 4 (Error). By default, this is set to 1 (Debug).  |
+| custom_plgx_LogModeQuiet | Specifies whether the log messages are printed on console or not. Relevant only when running osquery as a console application. |
+| custom_plgx_ServerPort | Specifies the port on which the PolyLogyx server is listening. By default, this is set to 443 and should not be changed. |
 | custom_plgx_enable_respserver | This option allows you to enable or disable the response feature. By default, this is enabled. |
-| schedule_splay_percent  |  Percent to splay config times for scheduled queries   |  
+| schedule_splay_percent  |  Specifies the percentage to splay the config times for scheduled queries.   |  
  
 
