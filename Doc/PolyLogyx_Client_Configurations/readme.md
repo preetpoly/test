@@ -49,6 +49,9 @@ For more information on filters, review the  [Understanding Filters](https://git
 PolyLogyx configuration options
 ---------------------
 The PolyLogyx configuration options are global in nature and are applied to all agents in addition to the agent configurations. The PolyLogyx platform provides the feature of 'response action' thru the same osquery extension that is used to collect endpoint telemetry. The response action can be controlled via these configuration options alongwith other osquery options.
+
+GLOBAL for all nodes vs Custom config for selected nodes
+
 Perform these steps to view or edit this configuration:
 1. Access the web interface for the server.
 2. Navigate to Management > Options.
