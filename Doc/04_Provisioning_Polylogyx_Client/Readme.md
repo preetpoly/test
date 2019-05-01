@@ -213,7 +213,7 @@ other options. With the –u option, you must use one of these options:
 
 Here are command examples.
 
-The following output is displayed if the `plgx_cpt.exe -u -d` command is successful. 
+The following output is displayed if the `plgx_cpt.exe -u d` command is successful. 
 ``` uninstall_osq, will remove everything osquery , db and all folders
 Stopping services. Please wait for a few second. As they say, Patience is a Virtue
 Services stopped successfully !!
@@ -222,7 +222,7 @@ Service stopped successfully
 Removing files..
 ```   
 
-The following output is displayed if the `plgx_cpt.exe -u -s` command is successful.
+The following output is displayed if the `plgx_cpt.exe -u s` command is successful.
 ``` uninstall_osq_shallow, will only uninstall osquery but keep database untouched
 Detected existing installation of osquery..
 Service stopped successfully
@@ -255,6 +255,34 @@ other options. With the –g option, you must use one of these options:
 | o       | Upgrades only the osquery (osqueryd.exe) file.   |
 | c       | Upgrades the plgx_cpt.exe file.                                                                            |
 
+The following output is displayed if the `plgx_cpt.exe -g a` command is successful. 
+```
+Trying to upgrade osquery in full mode including extension bins..Please wait..
+Service stopped successfully
+Osquery stopped
+Service stopped successfully
+Service stopped successfully
+Osquery is alreday installed, Uninstalling it in shallow mode
+Detected existing installation of osquery..
+Service is already stopped.
+Uninstalling osquery successful
+Service stopped successfully
+Service stopped successfully
+Service is already stopped.
+Trying to remove C:\ProgramData\osquery\plgx_win_extension.ext.exe
+Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
+Osquery successfully installed.
+Configuring client..Please wait..
+Service stopped successfully
+Osquery stopped
+Client configuration..Ready to go in 5 seconds..
+Service start pending...
+Service started successfully.
+CPT Service installed successfully
+Service start pending...
+Service started successfully.
+=== PolyLogyx osquery client installed Successfully ===
+```
 
 Troubleshooting Client Installation Issues
 ------------------------------------------
