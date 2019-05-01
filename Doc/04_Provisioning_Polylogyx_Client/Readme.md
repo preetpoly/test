@@ -115,7 +115,7 @@ Here is an example of a remote command execution using PSEXEC.
 
 The installation begins and the CPT utility brings the required artefacts on the
 endpoints. After installation is complete, the Osquery 3.2.4 and PolyLogyx
-extensions are deployed and the osqueryd service starts. The following output is
+extensions are deployed and the osqueryd service starts. Also, CPT is installed as a Windows service and it acts as a watcher for osqueryd service starts. If the osqueryd service stops, the CPT service restarts it. The following output is
 displayed if the command is successful.
 
 ```
@@ -240,10 +240,26 @@ Trying to remove C:\ProgramData\osquery\plgx_win_extension.ext.exe
 Upgrading the Client 
 ---------------------
 
-Upgrading the PolyLogyx client is manual process. You must uninstall the
-installed version and then install the latest version of the client. For more
-information, see [Uninstalling the Client](#uninstalling-the-client) and
-[Installing the PolyLogyx Client](#installing-the-polylogyx-client).
+Follow these steps to upgrade the PolyLogyx client.
+
+1.  Open a command window with administrative privileges.
+
+2.  Run the upgrade command.
+
+    Here is the syntax to execute the upgrade command.
+
+```plgx_cpt.exe [-g {<f> <update flagsfile>} | {<x> <update extension binary alone>} | {<a> <update osquery full>} | {<o> <update osquery only without extension>} | {<c> <update cpt>]}```
+
+Here is the syntax description.
+
+| Parameter | Description                                                                                                                                                                                  |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| \-g       | Specifies that we need to upgrade. This is a required parameter.                                                                                                                                  |
+| \-x       | Indicates the full path to the server public key file. This is an optional parameter.                                                                                                         |
+| \-a       | Represents the server port. This is an optional parameter.                                                                                                              |
+| \-o       | Represents the osquery version to be installed. Currently, only version 3.2.6 is supported. This is an optional parameter. If you do not specify a version, the latest version is installed. |
+| \-c       | Indicates the location at which to download. The default value is c:\\plgx-temp\\. This is an optional parameter.                                                                            |
+
 
 Troubleshooting Client Installation Issues
 ------------------------------------------
