@@ -266,8 +266,8 @@ channel](https://osquery-slack.herokuapp.com/).
 
 ### Incorrect server details
 
-The following error mesaage is displayed when you run a command wih incoreect
-server details, sch as IP address or host name.
+The following error mesaage is displayed when you run a command with incorrect
+server details, such as IP address or host name.
 
 ``` Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
 Transfer failed for [c:\plgx-temp\osquery.flags] , Error Code: 7 (Couldn't connect to server)
