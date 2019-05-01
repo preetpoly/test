@@ -244,15 +244,16 @@ Follow these steps to upgrade the PolyLogyx client.
 
 ```plgx_cpt.exe [-g {<f> <update flagsfile>} | {<x> <update extension binary alone>} | {<a> <update osquery full>} | {<o> <update osquery only without extension>} | {<c> <update cpt>]}```
 
-Here is the syntax description.
+The -g parameter is used to upgrade the agent and cannot be combined with any
+other options. With the –g option, you must use one of these options:
 
 | Parameter | Description                                                                                                                                                                                  |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \-g       | Specifies that we need to upgrade. This is a required parameter.                                                                                                                                  |
-| \-x       | Indicates the full path to the server public key file. This is an optional parameter.                                                                                                         |
-| \-a       | Represents the server port. This is an optional parameter.                                                                                                              |
-| \-o       | Represents the osquery version to be installed. Currently, only version 3.2.6 is supported. This is an optional parameter. If you do not specify a version, the latest version is installed. |
-| \-c       | Indicates the location at which to download. The default value is c:\\plgx-temp\\. This is an optional parameter.                                                                            |
+| \-f       | Upgrades only the osquery.flags file.                                                                                                                                    |
+| \-x       | Upgrades only the plgx_win_extension.ext.exe.                                                                                                         |
+| \-a       | Upgrades osquery (flags file and osqueryd.exe file) and the PolyLogyx extension (plgx_win_extension.ext.exe).                                                                                                              |
+| \-o       | Upgrades only the osquery (osqueryd.exe) file.   |
+| \-c       | Upgrades the plgx_cpt.exe file.                                                                            |
 
 
 Troubleshooting Client Installation Issues
