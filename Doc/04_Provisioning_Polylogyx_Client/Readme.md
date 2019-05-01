@@ -221,13 +221,16 @@ The following output is displayed if the `plgx_cpt.exe -u -d` command is success
 Stopping services. Please wait for a few second. As they say, Patience is a Virtue
 Services stopped successfully !!
 Uninstalling Polylogxy osquery client successful. Removing all the services..
+Service stopped successfully
 Removing files..
 ```   
 
 The following output is displayed if the `plgx_cpt.exe -u -s` command is successful.
 ``` uninstall_osq_shallow, will only uninstall osquery but keep database untouched
 Detected existing installation of osquery..
+Service stopped successfully
 Uninstalling osquery successful
+Service stopped successfully
 Trying to remove C:\ProgramData\osquery\plgx_win_extension.ext.exe
 ```                                                                                                                                                                                                                                                                              
 
