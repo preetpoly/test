@@ -119,12 +119,14 @@ extensions are deployed and the osqueryd service starts. The following output is
 displayed if the command is successful.
 
 ``` Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
-Files downloaded. Initiaiting install..
 Osquery successfully installed.
 Configuring client..Please wait..
 Service stopped successfully
 Osquery stopped
 Client configuration..Ready to go in 5 seconds..
+Service start pending...
+Service started successfully.
+CPT Service installed successfully
 Service start pending...
 Service started successfully.
 === PolyLogyx osquery client installed Successfully ===
