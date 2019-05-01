@@ -118,7 +118,8 @@ endpoints. After installation is complete, the Osquery 3.2.4 and PolyLogyx
 extensions are deployed and the osqueryd service starts. The following output is
 displayed if the command is successful.
 
-``` Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
+```
+Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
 Osquery successfully installed.
 Configuring client..Please wait..
 Service stopped successfully
