@@ -257,6 +257,7 @@ other options. With the –g option, you must use one of these options:
 
 The following output is displayed if the `plgx_cpt.exe -g a` command is successful. 
 ```
+Server URL: server.yourorg.com
 Trying to upgrade osquery in full mode including extension bins..Please wait..
 Service stopped successfully
 Osquery stopped
