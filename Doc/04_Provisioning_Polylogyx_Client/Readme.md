@@ -255,7 +255,7 @@ channel](https://osquery-slack.herokuapp.com/).
 
 ### Incorrect server details
 
-The following error mesaage is diaplayed when you run a command wih incoreect
+The following error mesaage is displayed when you run a command wih incoreect
 server details, sch as IP address or host name.
 
 ``` Downloading Files needed for install. Depending on your network connection, it might take some time. Please wait..
