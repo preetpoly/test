@@ -208,8 +208,8 @@ other options. With the –u option, you must use one of these options:
 
 | Option | Description                                                                                                                           |
 |--------|---------------------------------------------------------------------------------------------------------------------------------------|
-| \s    | Used with the –u parameter for shallow uninstall. This option only uninstalls the software and does not delete associated data files. |
-| \d    | Used with the –u parameter for deep uninstall. This option removes all traces of the agent, including data files.                     |
+| s    | Used with the –u parameter for shallow uninstall. This option only uninstalls the software and does not delete associated data files. |
+| d    | Used with the –u parameter for deep uninstall. This option removes all traces of the agent, including data files.                     |
 
 Here are command examples.
 
@@ -249,11 +249,11 @@ other options. With the –g option, you must use one of these options:
 
 | Parameter | Description                                                                                                                                                                                  |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \f       | Upgrades only the osquery.flags file.                                                                                                                                    |
-| \x       | Upgrades only the plgx_win_extension.ext.exe.                                                                                                         |
-| \a       | Upgrades osquery (flags file and osqueryd.exe file) and the PolyLogyx extension (plgx_win_extension.ext.exe).                                                                                                              |
-| \o       | Upgrades only the osquery (osqueryd.exe) file.   |
-| \c       | Upgrades the plgx_cpt.exe file.                                                                            |
+| f       | Upgrades only the osquery.flags file.                                                                                                                                    |
+| x       | Upgrades only the plgx_win_extension.ext.exe.                                                                                                         |
+| a       | Upgrades osquery (flags file and osqueryd.exe file) and the PolyLogyx extension (plgx_win_extension.ext.exe).                                                                                                              |
+| o       | Upgrades only the osquery (osqueryd.exe) file.   |
+| c       | Upgrades the plgx_cpt.exe file.                                                                            |
 
 
 Troubleshooting Client Installation Issues
