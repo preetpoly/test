@@ -37,7 +37,7 @@ Perform these steps to view or edit this configuration:
    ![configs_menu](https://github.com/preetpoly/test/blob/pooja/configs_menu.png)
 
    The configuration consists of the scheduled query intervals for various osquery tables. 
-3. Select a table fromt the list, such as default_config_windows.
+3. Select a table from the list, such as default_config_windows.
 
    ![configs_list](https://github.com/preetpoly/test/blob/pooja/configs_list.png)
 
