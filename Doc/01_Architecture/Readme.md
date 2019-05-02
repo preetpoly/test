@@ -7,6 +7,6 @@ components.
 
 
 
-			
+|										|																							|
 |:---									|													   								    ---:|
 |[Previous >> Introduction](Readme.md)  | [Next >> Provisioning the PolyLogyx Server](../02_Provisioning_Polylogyx_Server/Readme.md)|
