@@ -1,9 +1,7 @@
-Getting Started
-===============
+PolyLogyx Endpoint Platform - Endpoint Monitoring at scale
+===========================================================
 
-The PolyLogyx Endpoint Visibility and Control Platform is built for cloud and
-SOCs. It provides endpoint monitoring and visibility, threat detection and
-incident response for Security operating Centres (SOCs).
+The PolyLogyx Endpoint Visibility and Control Platform is a sophisticated, flexible and extensbile endpoint monitoring and response platform. It can be deployed in cloud or on-prem with equal ease. It provides endpoint monitoring and visibility, threat detection and incident response for Security operating Centres (SOCs). To request a trial copy of the platform, please email to open@polylogyx.com
 
 Intended Audience 
 ------------------
@@ -16,7 +14,7 @@ systems.
 Features 
 ---------
 
-At a high-level, the PolyLogyx platform provides these features.
+Built using the form factor of [osquery](https://osquery.io/) agent that is extended using [PolyLogx Extension](https://github.com/polylogyx/osq-ext-bin), at a high-level the PolyLogyx platform provides these features.
 
 ### Monitoring and visibility
 
@@ -33,7 +31,7 @@ events:
 
 -   Process activities (open, create, terminate, map, and open handles)
 
--   Network events (socket, DNS request and response, HTTP)
+-   Network events (socket, DNS request and response, HTTP, TLS credentials)
 
 -   Removable media events
 
@@ -47,6 +45,10 @@ events:
 
 -   YARA scan results
 
+-   Memory forensics
+
+-   File Acquistion
+
 For more information on the type of information, see Using Recon
 Data.
 
@@ -54,12 +56,12 @@ Data.
 
 To allow detection of malicious activities, PolyLogyx offers:
 
--   Alerting – You can set up rules to define alerts to stay updated on
+-   Alerting – You can set up various [detection rules](https://github.com/polylogyx/DetectionRules) to define alerts to stay updated on
     pertinent activities. After you set up a rule for an event, you receive an
-    email when the event occurs, allowing you to take immediate action.
+    email when the event occurs, allowing you to take immediate action. You could also forward the alert to a SIEM for additional co-relation.
 
 -   Threat intelligence – You can connect with various threat intel sources,
-    such as Virus Total.
+    such as [Virus Total](https://www.virustotal.com/gui/home/upload), [Alien Vault OTX](https://otx.alienvault.com/) and [IBM xForce](https://exchange.xforce.ibmcloud.com/).
 
 -   Queries
 
