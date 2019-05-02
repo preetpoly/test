@@ -63,47 +63,45 @@ Here is the syntax used to define a filter.
 ``` 
 “plgx_event_filters”: {
  	“table name1”: {
-“column name1” : {
-“filter type” : {
-“values”:[
-“value 1”,
-“value 2”
- ]
- }
-			  },
-“column name2” : {
-“filter type” : {
- “values”:[
-“value 3”,
-“value 4”
-   ]
-				        }
-				   }
+		“column name1” : {
+			“filter type” : {
+				“values”:[
+					“value 1”,
+					“value 2”
+					]
+					}
+				},
+		“column name2” : {
+			“filter type” : {
+				“values”:[
+					“value 3”,
+					“value 4”
+					]
+				    }
+			   }
 			},
-“table name2”: {
-“column name3” : {
-“filter type” : {
-“values”:[
-“value 5”,
-“value 6”
- ]
- }
-			   },
-“column name2” : {
-“filter type” : {
- “values”:[
-“value 7”,
-“value 8”
-   ]
-				  	 }
-				   }
-
+	“table name2”: {
+		“column name3” : {
+			“filter type” : {
+				“values”:[
+					“value 5”,
+					“value 6”
+					]
+				}
+		   },
+		“column name2” : {
+			“filter type” : {
+				“values”:[
+					“value 7”,
+					“value 8”
+					]
+				}
 			}
-			}
+		}
+	}
 
 ```
  
-
 In the syntax:
 
 -   table name1 and table name2 - Represents the name of the table for which to
@@ -177,3 +175,8 @@ Event filtering is supported on following tables (and fields or columns).
 |  win_remote_thread_events                                   | src_path, target_path, and function_name          |
 |  win_dns_events                                             | domain_name       |
 |  win_dns_response_events                                    | domain_name       |
+
+
+|										|																							|
+|:---									|													   								    ---:|
+|[Previous << Client Configurations](../04_PolyLogyx_Client_Configurations/Readme.md)  | [Next >> Configuring Queries](../06_Queries/Readme.md)|

@@ -153,3 +153,8 @@ Troubleshooting Server Installation Issues
 ------------------------------------------
 
 To be added
+
+
+|										|																							|
+|:---									|													   								    ---:|
+|[Previous << Architecture Overview](../01_Architecture/Readme.md)  | [Next >> Provisioning the PolyLogyx Client](../03_Provisioning_Polylogyx_Client/Readme.md)|

@@ -361,3 +361,8 @@ following error message is displayed.
 2.  Execute the command to install the PolyLogyx client with administrative
     rights and a valid certificate. For more information, see [Deploying the
     PolyLogyx Client](#deploying-the-polylogyx-client).
+
+	
+|										|																							|
+|:---									|													   								    ---:|
+|[Previous << Provisioning the PolyLogyx Server](../02_Provisioning_Polylogyx_Server/Readme.md)  | [Next >> Configuring the client](../04_PolyLogyx_Client_Configurations/Readme.md)|
